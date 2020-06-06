@@ -16,9 +16,9 @@ version and one for the Greek.
 
 # License
 The content of this repository are restricted under the following licenses
-* [MIT License](MIT License)
+* [MIT License](MIT_License)
 The structure of this project, the layout of the cv document defined in tex
-and the integration with CI/CD tools are governed under the [MIT License](MIT License).
+and the integration with CI/CD tools are governed under the [MIT License](MIT_License).
 * Personal information and details that consist the context of the tex and pdf
 documents are under strict copyright and cannot be used without prior permission
 of the author.
