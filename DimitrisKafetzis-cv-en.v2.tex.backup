@@ -1,0 +1,284 @@
+% -----------------------------------------------------------------------------
+%
+% TODOs
+%  * Last updated - see deedy
+%  *
+% -----------------------------------------------------------------------------
+
+\documentclass{CVSoftwareEngineer}
+
+\cvname{Kafetzis, Dimitris Andreas}
+\cvjobtitle{Principal Software Engineer}
+\cvdate{20 December 1985}
+\cvnumberphone{}
+\cvaddress{Potong Pasir, Singapore}
+\cvsite{}
+\cvlinkedin{in/kafetzisd}
+\cvgithub{github.com/amolofos}
+\cvmail{kafetzis.dimitris.andreas@gmail.com}
+
+\skills{{pursuer of rabbits/5.8},{good manners/4},{outgoing/4.3},{polite/4},{Java/0.01}}
+
+\begin{document}
+
+	%\vspace*{\fill}
+	\begin{tikzpicture}
+		\node[mybox] (PersonalDetails){
+			\begin{minipage}{\cvSideWidth}
+				\begin{center}
+					\section{{\large \faVenusMars} Who am I?}
+					{\textbf{\Large\color{mainblue}\cvname \\}}
+					{\Large\color{black!80}\cvjobtitle \\}
+				\end{center}
+
+				\begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+				  \matrix [
+				    column 1/.style={anchor=center, contactIcon},
+				    column 2/.style={anchor=west, align=left, contactText},
+				    column sep=5pt,
+				    row sep=5pt] (contact) {
+							\node{\textsc{\faInfoCircle}}; & \node{
+								\begin{varwidth}{\cvSideWidth}
+									I am Greek currently working under \textit{Employment Pass} in Singapore
+								\end{varwidth}
+							};\\
+							\ifthenelse{\equal{\cvdate}{}}{}{\node{\textsc{\faBirthdayCake}}; & \node{\cvdate};\\}
+							\ifthenelse{\equal{\cvaddress}{}}{}{\node{\textsc{\faMapMarker}}; & \node{\cvaddress};\\}
+							\ifthenelse{\equal{\cvnumberphone}{}}{}{\node{\textsc{\faPhone}}; & \node{\cvnumberphone};\\}
+							\ifthenelse{\equal{\cvsite}{}}{}{\node{\textsc{\InternetExplorer}}; & \node{\cvsite};\\}
+							\ifthenelse{\equal{\cvlinkedin}{}}{}{\node{\textsc{\faLinkedin}}; & \node{\cvlinkedin};\\}
+							\ifthenelse{\equal{\cvgithub}{}}{}{\node{\textsc{\faGithub}}; & \node{\cvgithub};\\}
+							\ifthenelse{\equal{\cvmail}{}}{}{\node{\textsc{\faAt}}; & \node{\href{mailto:\cvmail}{\cvmail}};\\}
+							\node{\textsc{\faLanguage}}; & \node{Languages:};\\
+  					};
+				\end{tikzpicture}
+				\begin{tikzpicture}[every node/.style={text depth=0pt, inner sep=0pt, outer sep=0pt}]
+  				\matrix [
+  				  column 1/.style={anchor=east},
+  				  column 2/.style={anchor=west},
+  				  column sep=5pt,
+  				  row sep=5pt,
+  			  ] (contact) {
+  				  \node[languageText]{English}; & \node[progressArea, align=left](language 1) {}; \\
+  				  \node[languageText]{Greek};  & \node[progressArea, align=left](language 2) {}; \\
+  				  \node[languageText]{Mandarin}; & \node[progressArea, align=left](language 3) {}; \\
+  				};
+  				\draw (language 1.west) node[progressBar, minimum width=5/5*\cvLanguageBarWidth] {};
+  				\draw (language 2.west) node[progressBar, minimum width=5/5*\cvLanguageBarWidth] {};
+  				\draw (language 3.west) node[progressBar, minimum width=0.25/5*\cvLanguageBarWidth] {};
+				\end{tikzpicture}
+			\end{minipage}
+		};
+		\node[mybox] (RestDetails){
+			\begin{minipage}{\cvSideWidth}
+				\begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+					\node[sectionTitle,
+						below=\cvSectionSep of PersonalDetails.south west,
+					] (title Education) {\cvSection{Education}};
+					\node[left=\cvTimeDotSep of title Education,headerIcon] {\faUniversity};
+					\node[eventdottext,
+						below=\cvSectionSep of title Education.south west,
+					](restDetails){Not completed tertiary education};
+					\node[eventdottext,
+						below=\cvSectionSep of title Education.south west,
+					](restDetails){
+							\begin{varwidth}{\cvSideWidth}
+							I entered on 2003 the Electrical Engineering and Computer Science department
+							of the Polytechnic Faculty, University of Patras, Greece, {\href{http://www.ece.upatras.gr}{www.ece.upatras.gr}},
+							completing 5 years of study without completing my Thesis and receiving the Diploma.
+						\end{varwidth}
+					};
+				\end{tikzpicture}
+			\end{minipage}
+		};
+	\end{tikzpicture}
+	\vspace*{\fill}
+	\begin{tikzpicture}][every node/.style={inner sep=0pt, outer sep=0pt},
+  	remember picture,
+  	overlay,
+		shift=5cm
+	]
+		\node[sectionTitle] at (0,0) (title 1) {\cvSection{Work experience}}; \\
+		\node[left=\cvTimeDotSep of title 1,headerIcon] {\faBriefcase}; \\
+		\begin{scope}[on background layer]
+		  \draw[line width=2pt,cvGreen]
+		    let \p1=(title 1.south west),
+		        \p2=(current page.east) in
+		    (\x1,\y1-0.1cm) to (\x2,\y1-0.1cm);
+		\end{scope}
+		\node[
+		  below=\cvSectionSep of title 1.south west,
+		  eventdottext]
+		  (item 1 header)
+		  {\phantom{Evening}};
+		\node[
+		  below=\cvSectionSep of title 1.south west,
+		  eventdottext]
+		  (item 1)
+		  {\cvExperience
+		    {Principal Software Engineer}
+		    {SG Digital}
+		    {Location X}
+		    {2018-09 - 2016-05}
+		    {Since September 2018 my resposibilities from Senior Software Engineer have been expanded focusing on \\
+						* ensuring production stability and analysing performance bottlenecks \\
+						* presenting and explaining high profile issues to customer's managers and directors \\
+						* analysing and defining the design of new features and projects
+				}};
+		\node[
+		  left=\cvTimeDotSep of item 1 header,
+		  timedot]
+		  (start)
+		  {};
+
+		% item 2
+		\node[
+		  below=\cvSectionSep of item 1.south west,
+		  eventdottext]
+		  (item 2 header)
+		  {\phantom{Evening}};
+		\node[
+		  below=\cvSectionSep of item 1.south west,
+		  eventdottext]
+		  (item 2)
+		  {\cvExperience
+		    {Senior Software Engineer}
+		    {SG Digital}
+		    {Location Y}
+		    {2015-18 - 2015-05}
+		    {Throughout this period the position is located in Singapore involving the development of heavy transactional software systems for Singapore Pools, Singapore's sports betting and lottery provider. Through this role, i was member of more than one internal teams working with a combination of waterfall and agile development process to introduce and migrate Singapore Pools into Openbet platform. \\
+						* Migrating data from a legacy, monolithic system to a new one, service and component based. We followed the ETL approach of which we were responsible for the transformation and load stages \\
+						* Dealing with performance issues of distributed database queries \\
+						* Supporting the client's system after the initial roll-out \\
+						* Defining release process from code to production deploy \\
+						* Entry level experience with queuing systems (Kafka) \\
+						Openbet Technologies Ltd and its subsidiary Openbet Hellas SA was acquired by NYX Gaming Group on 2016-05-20. NYX Gaming Group was acquired by Scientific Games on 2017-11 evolving into its SG Digital department.
+				}};
+		\node[
+		  left=\cvTimeDotSep of item 2 header,
+		  timedot]
+		  {};
+
+		% item 3
+		\node[
+		  below=\cvSectionSep of item 2.south west,
+		  eventdottext]
+		  (item 3 header)
+		  {\phantom{Evening}};
+		\node[
+		  below=\cvSectionSep of item 2.south west,
+		  eventdottext]
+		  (item 3)
+		  {\cvExperience{Senior Software Engineer}
+		      {SG Digital}
+		      {Location Z}
+		      {2015-07 - 2015-06}
+		      {During this period i was involved in a small team (5-15 members) supporting the maintenance and evolution of the transactional software systems for some of the largest UK and European betting companies.}};
+		\node[
+		  left=\cvTimeDotSep of item 3 header,
+		  timedot]
+		  {};
+
+		% item 4
+		\node[
+		  below=\cvSectionSep of item 3.south west,
+		  eventdottext]
+		  (item 4 header)
+		  {\phantom{Evening}};
+		\node[
+		  below=\cvSectionSep of item 3.south west,
+		  eventdottext]
+		  (item 4)
+		  {\cvExperience{Software Engineer}
+		      {SG Digital}
+		      {Location Z}
+		      {2012-11 - 2012-10}
+		      {Full time employment as external contractor to \href{http://www.openbet.com}{OpenBet Technologies Ltd}. This position holds the same responsibilities and properties of the next period "2015-04 - 2016-06" as the Openbet department of ATC was acquired by Openet Technologies Ltd.}};
+		\node[
+		  left=\cvTimeDotSep of item 4 header,
+		  timedot]
+		  {};
+
+		% item 5
+		\node[
+		  below=\cvSectionSep of item 4.south west,
+		  eventdottext]
+		  (item 5 header)
+		  {\phantom{Evening}};
+		\node[
+		  below=\cvSectionSep of item 4.south west,
+		  eventdottext]
+		  (item 5)
+		  {\cvExperience{Military service}
+		      {Greek airforce}
+		      {Location Z}
+		      {2011-11 - 2009}
+		      {}};
+		\node[
+		  left=\cvTimeDotSep of item 5 header,
+		  timedot]
+		  {};
+
+		% item 6
+		\node[
+		  below=\cvSectionSep of item 5.south west,
+		  eventdottext]
+		  (item 6 header)
+		  {\phantom{Evening}};
+		\node[
+		  below=\cvSectionSep of item 5.south west,
+		  eventdottext]
+		  (item 6)
+		  {\cvExperience{Services support and Computer Technician}
+		      {Services support and Computer Technician}
+		      {Location Z}
+		      {2015-07 - 2015-07}
+		      {}};
+		\node[
+		  left=\cvTimeDotSep of item 6 header,
+		  timedot]
+		  {};
+		\node[
+		  left=\cvTimeDotSep of item 6.south west,
+		  invisibletimedot]
+		  (end)
+		  {};
+
+		\draw (start) to (end.center);
+	\end{tikzpicture}
+
+
+%
+%		\section{{\large \faUniversity} Education}
+%			\begin{center}
+%				Not completed tertiary education
+%			\end{center}
+%			I entered on 2003 the Electrical Engineering and Computer Science department
+%			of the Polytechnic Faculty, University of Patras, Greece, {\href{http://www.ece.upatras.gr}{www.ece.upatras.gr}},
+%			completing 5 years of study without completing my Thesis and receiving the Diploma.
+%
+%		\section{{\large \faGit} Projects}
+%			\textbf{Automated workstation setup - Ansible} \\
+%			\textit{Ansible, Bash, Linux} \\
+%			Professor dfsd fnsdffdf df sdfsd fj sdlkgsl gjk sdngd g \\
+%			\\
+%			\textbf{Cryptography examples} \\
+%			\textit{Java, Python, Go, Scala, Linux} \\
+%			Professor dfsd fnsdffdf df sdfsd fj sdlkgsl gjk sdngd g \\
+%
+%	\begin{minipage}[b]{0.7\textwidth}
+%
+%		\section{{\large \faWrench} Technology stack}
+%			%\skills
+%
+%			\begin{tabular}{p{5cm} p{5cm}}
+%
+%			\begin{tikzpicture}
+%				\pie[polar, explode=0.1, text=inside]{20/Python, 40/TCL, 30/Java-SpringBoot, 10/Bash}
+%			\end{tikzpicture} & \begin{tikzpicture}
+%				\pie[cloud, text=inside, scale font, radius=2, hide number]{10/Unix-Linux, 20/Ansible, 20/Jenkins}
+%			\end{tikzpicture}
+%			\end{tabular}
+%	\end{minipage}
+
+\end{document}

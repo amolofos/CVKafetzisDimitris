@@ -1,0 +1,21 @@
+sudo: required
+
+language: bash
+
+dist: trusty
+
+services: docker
+
+script:
+  - wget https://raw.githubusercontent.com/blang/latex-docker/master/latexdockercmd.sh
+  - chmod +x latexdockercmd.sh
+  - ./latexdockercmd.sh ./scripts/build.sh clean compile
+
+deploy:
+  provider: releases
+  token: $GITHUB_TOKEN
+  file: target/DimitrisKafetzis-cv-en.pdf
+ skip_cleanup: true
+ on:
+     repo: amolofos/CVKafetzisDimitris
+     tags: true
