@@ -18,11 +18,12 @@ before_deploy:
   - git config --local user.email $GITHUB_EMAIL
   - export TRAVIS_TAG=${TRAVIS_TAG:-v1.0.$(git rev-list --count HEAD)}
   - git tag $TRAVIS_TAG
+  - mv target/DimitrisKafetzis-cv-en.pdf target/DimitrisKafetzis-cv-en.$TRAVIS_TAG.pdf
 
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: target/DimitrisKafetzis-cv-en.pdf
+  file: target/DimitrisKafetzis-cv-en.$TRAVIS_TAG.pdf
   skip_cleanup: true
   on:
     repo: amolofos/CVKafetzisDimitris
