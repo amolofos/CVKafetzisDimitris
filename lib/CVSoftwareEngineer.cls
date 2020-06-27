@@ -125,7 +125,7 @@
 \definecolor{headings}{HTML}{6A6A6A}
 
 \definecolor{cvGreen}{HTML}{357F2D}
-\definecolor{mainblue}{HTML}{0E5484}
+\definecolor{mainblue}{HTML}{002E63}
 
 
 % -----------------------------------------------------------------------------
