@@ -1,0 +1,261 @@
+% -----------------------------------------------------------------------------
+%
+% TODOs
+%  * Last updated - see deedy
+%  *
+% -----------------------------------------------------------------------------
+
+\documentclass{CVSoftwareEngineer}
+
+\cvname{Kafetzis, Dimitris Andreas}
+\cvjobtitle{Principal Software Engineer}
+\cvdate{}
+\cvnumberphone{}
+\cvaddress{Potong Pasir, Singapore}
+\cvsite{}
+\cvlinkedin{\href{https://www.linkedin.com/in/kafetzisd}{in/kafetzisd}}
+\cvgithub{\href{https://github.com/amolofos}{github.com/amolofos}}
+\cvmail{kafetzis.dimitris.andreas@gmail.com}
+
+\begin{document}
+
+	\begin{paracol}{2}
+		% Applies text justification.
+		\sloppy
+
+		\begin{tikzpicture}
+			\node[personalDetailsBox] (PersonalDetails){
+
+				\begin{minipage}{\cvSideWidth-0.5cm}
+					\begin{center}
+						\section{Who am I?}
+						{\textbf{\Large\color{black}\cvname \\}}
+						{\Large\color{black!80}\cvjobtitle \\}
+					\end{center}
+
+					\begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+						\matrix [
+							column 1/.style={anchor=center, contactIcon},
+							column 2/.style={anchor=west, align=left, contactText},
+							column sep=5pt,
+							row sep=5pt] (contact) {
+								\node{\textsc{\faInfoCircle}}; & \node{
+									\begin{varwidth}{\cvSideWidth-1cm}
+										Greek working under \textit{Employment Pass} in Singapore \\
+									\end{varwidth}
+								};\\
+								\ifthenelse{\equal{\cvdate}{}}{}{\node{\textsc{\faBirthdayCake}};   & \node{\cvdate};\\}
+								\ifthenelse{\equal{\cvaddress}{}}{}{\node{\textsc{\faMapMarker}};   & \node{\cvaddress};\\}
+								\ifthenelse{\equal{\cvnumberphone}{}}{}{\node{\textsc{\faPhone}};   & \node{\cvnumberphone};\\}
+								\ifthenelse{\equal{\cvsite}{}}{}{\node{\textsc{\InternetExplorer}}; & \node{\cvsite};\\}
+								\ifthenelse{\equal{\cvlinkedin}{}}{}{\node{\textsc{\faLinkedin}};   & \node{\cvlinkedin};\\}
+								\ifthenelse{\equal{\cvgithub}{}}{}{\node{\textsc{\faGithub}};       & \node{\cvgithub};\\}
+								\ifthenelse{\equal{\cvmail}{}}{}{\node{\textsc{\faAt}};             & \node{\href{mailto:\cvmail}{\cvmail}};\\}
+								\node{\textsc{\faLanguage}};                                        & \node{Languages:};\\
+							};
+					\end{tikzpicture}
+					\begin{tikzpicture}[every node/.style={text depth=0pt, inner sep=0pt, outer sep=0pt}]
+						\matrix [
+							column 1/.style={anchor=east},
+							column 2/.style={anchor=west},
+							column 3/.style={anchor=west, align=left},
+							column sep=5pt,
+							row sep=5pt,
+						] (contact) {
+							\node[languageText]{English};  & \node[languageProgressArea, align=left](language 1){}; & \node[languageTextComment]{}; \\
+							\node[languageText]{Greek};    & \node[languageProgressArea, align=left](language 2){}; & \node[languageTextComment]{Mother language}; \\
+							\node[languageText]{Mandarin}; & \node[languageProgressArea, align=left](language 3){}; & \node[languageTextComment]{Just started}; \\
+							% Added so we add some ysep bottom space to the outer, surounding personalDetailsBox node.
+							\node[languageText]{};         & \node                                              {}; & \node[languageTextComment]{}; \\
+						};
+						\draw (language 1.west) node[languageProgressBar, minimum width=5/5*\cvLanguageBarWidth]   {};
+						\draw (language 2.west) node[languageProgressBar, minimum width=5/5*\cvLanguageBarWidth]   {};
+						\draw (language 3.west) node[languageProgressBar, minimum width=0.1/5*\cvLanguageBarWidth] {};
+					\end{tikzpicture}
+				\end{minipage}
+			};
+		\end{tikzpicture}
+
+		\section{About me}
+		My experience spans across 7+ years designing and building with highly
+		transactional, web, relational database backed systems, 5 years of which
+		on distributed platforms. I focus mainly in the backend services and
+		the persistence, database infrastructure.
+
+		\section{Education}
+		\begin{center}
+			Not completed tertiary education
+		\end{center}
+		I entered on 2003 the Electrical Engineering and Computer Science department
+		of the Polytechnic Faculty, University of Patras, Greece, {\scriptsize\href{http://www.ece.upatras.gr}{www.ece.upatras.gr}},
+		attending 5 years of study without completing my Thesis and receiving the Diploma.
+
+		\section{Daily work activities}
+		\begin{tikzpicture}
+			\pie[polar, explode=0.1, radius=1.2, rotate=-60, color = {green!10, lime, brown!50, yellow!60, red!30, blue!40}]{
+				15/Mentoring,
+				15/Code review,
+				20/System design,
+				20/Code development,
+				15/Production support,
+				15/Business analysis
+			}
+		\end{tikzpicture}
+
+		% Switch to the next paracol column.
+		\switchcolumn
+
+		\section{Work experience}
+		\begin{tikzpicture}][every node/.style={inner sep=0pt, outer sep=0pt}]
+
+			\node[
+				eventDotText]
+				(item 1 header)
+				{\phantom{Evening}};
+			\node[
+				eventDotText]
+				(item 1)
+				{\cvExperience
+					{Principal Software Engineer}
+					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
+					{Singapore}
+					{2018-09 - Today}
+					{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+							\item[*] Hardened the funding flow ensuring eWallet integrity
+							\item[*] Enchanced the performance of slow database queries
+							\item[*] Investigated high profile production issues and present
+								them to C level stakeholders
+							\item[*] Migrated 80 million lottery bets to renewed data model
+						\end{enumerate}
+					}
+				};
+			\node[
+				left=\cvTimeDotSepMain of item 1 header,
+				timeDot]
+				(start)
+				{};
+			\node[
+				right=\cvTimeDotSepSecondary of item 1 header,
+				invisibleTimeDot]
+				(startInner)
+				{};
+
+			% item 2
+			\node[
+				below=\cvSectionSep of item 1.south west,
+				eventDotText]
+				(item 2 header)
+				{\phantom{Evening}};
+			\node[
+				below=\cvSectionSep of item 1.south west,
+				eventDotText]
+				(item 2)
+				{\cvExperience
+					{Senior Software Engineer}
+					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
+					{Singapore}
+					{2015-10 - 2018-08 (2yrs 11mos)}
+					{
+						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+							\item[*] Coordinated development of cross functional features
+								amongst teams of different locations with a goal to rollout
+								our solution to a new tier 1 customer
+							\item[*] Owned the data migration including transaction history
+								and user activity onto the new platform
+							\item[*] Designed distributed queries for Informix database
+							\item[*] Defined the release process from code to production
+							\item[*] Rewrote the ansible deployment scripts reducing production incidents
+						\end{enumerate}
+					}
+				};
+			\node[
+				left=\cvTimeDotSepMain of item 2 header,
+				timeDot]
+				{};
+
+			% item 3
+			\node[
+				below=\cvSectionSep of item 2.south west,
+				eventDotText]
+				(item 3 header)
+				{\phantom{Evening}};
+			\node[
+				below=\cvSectionSep of item 2.south west,
+				eventDotText]
+				(item 3)
+				{\cvExperience{Software Engineer}
+					{\href{http://www.openbet.com}{OpenBet Ltd (Part of NYX Gaming Group)}}
+					{Athens, Greece}
+					{2012-11 - 2015-09 (2 yrs 11mos)}
+					{
+						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+							\item[*] Performed multiple production releases
+							\item[*] Wrote the extraction scripts of a multi component data migration
+							\item[*] Refined and improved my team's release process
+							\item[*] Integrated with Paypal \& Safecharge payment providers tokenizing
+							credit card storage reducing system's security exposure.
+						\end{enumerate}
+					}
+				};
+			\node[
+				left=\cvTimeDotSepMain of item 3 header,
+				timeDot]
+				{};
+			\node[
+				below=0cm of item 3.south east,
+				invisibleTimeDot]
+				(endInner)
+				{};
+			\node[
+				left=\cvTimeDotSepMain of item 3 header,
+				invisibleTimeDot]
+				(end)
+				{};
+
+			\draw [eventGroupedLine] (endInner) -- (startInner) node [eventGroupedSideText]{Same department, same product, multiple acquisitions.};
+
+			% Use `shorten <=-10mm` to adjust the position of the arrow.
+			\draw[very thick, {Triangle[length = 7pt)]}-{}, shorten <=-2mm] (start.north) to (end.south);
+		\end{tikzpicture}
+
+		\section{Projects}
+		\begin{enumerate}[leftmargin=0.5cm]
+			\item[*] \textbf{\href{https://github.com/amolofos/automated-workstation-setup}{Automated workstation setup}} \\
+				\textit{Ansible} scripts automating the setup of a brand new Ubuntu
+				workstation, as well as non-attended updates.
+			\item[*] \textbf{\href{https://github.com/amolofos/cryptography-examples}{Cryptography examples}} \\
+				\textit{Java \& Python} showcase of different cryptographic
+				algorithms and libraries producing cross language, interchangable encryption results.
+		\end{enumerate}
+
+		\section{{\small \faWrench} Technology stack}
+		\begin{tikzpicture}[every node/.style={text depth=0pt, inner sep=0pt, outer sep=0pt}]
+			\matrix [
+				column 1/.style={anchor=east},
+				column 2/.style={anchor=west},
+				column 3/.style={anchor=west, align=left},
+				column sep=1pt,
+				row sep=7pt,
+			] (skills) {
+				\node[skillText]{Distributed systems};       & \node[skillProgressArea, align=left](skill  1){}; & \node[skillTextComment]{5}; \\
+				\node[skillText]{Linux, Ubuntu, RedHat};     & \node[skillProgressArea, align=left](skill  2){}; & \node[skillTextComment]{7}; \\
+				\node[skillText]{Rdbms, informix. postgres}; & \node[skillProgressArea, align=left](skill  3){}; & \node[skillTextComment]{7}; \\
+				\node[skillText]{Maven, Jenkins etc};        & \node[skillProgressArea, align=left](skill  4){}; & \node[skillTextComment]{7}; \\
+				\node[skillText]{Ansible};                   & \node[skillProgressArea, align=left](skill  5){}; & \node[skillTextComment]{4}; \\
+				\node[skillText]{Java 8 \& Springboot};      & \node[skillProgressArea, align=left](skill  6){}; & \node[skillTextComment]{2}; \\
+				\node[skillText]{Python};                    & \node[skillProgressArea, align=left](skill  7){}; & \node[skillTextComment]{2}; \\
+				\node[skillText]{Tcl};                       & \node[skillProgressArea, align=left](skill  8){}; & \node[skillTextComment]{7}; \\
+			};
+			\draw (skill  1.west) node[skillProgressBar, minimum width=0.5*\cvSkillBarWidth] {};
+			\draw (skill  2.west) node[skillProgressBar, minimum width=0.7*\cvSkillBarWidth] {};
+			\draw (skill  3.west) node[skillProgressBar, minimum width=0.7*\cvSkillBarWidth] {};
+			\draw (skill  4.west) node[skillProgressBar, minimum width=0.7*\cvSkillBarWidth] {};
+			\draw (skill  5.west) node[skillProgressBar, minimum width=0.4*\cvSkillBarWidth] {};
+			\draw (skill  6.west) node[skillProgressBar, minimum width=0.2*\cvSkillBarWidth] {};
+			\draw (skill  7.west) node[skillProgressBar, minimum width=0.2*\cvSkillBarWidth] {};
+			\draw (skill  8.west) node[skillProgressBar, minimum width=0.7*\cvSkillBarWidth] {};
+			\draw[decorate, decoration={brace, amplitude=5pt, raise=4ex}] (skill 8.west) (skill 1.east) -- (skill 8.east) node[midway, xshift=3.5em]{years};
+		\end{tikzpicture}
+
+	\end{paracol}
+\end{document}

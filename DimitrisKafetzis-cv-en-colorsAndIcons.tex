@@ -29,7 +29,7 @@
 				\begin{minipage}{\cvSideWidth-0.5cm}
 					\begin{center}
 						\section{{\small \faVenusMars} Who am I?}
-						{\textbf{\Large\color{mainblue}\cvname \\}}
+						{\textbf{\Large\color{black}\cvname \\}}
 						{\Large\color{black!80}\cvjobtitle \\}
 					\end{center}
 
@@ -213,8 +213,9 @@
 				{};
 
 			\draw [eventGroupedLine] (endInner) -- (startInner) node [eventGroupedSideText]{Same department, same product, multiple acquisitions.};
+
 			% Use `shorten <=-10mm` to adjust the position of the arrow.
-			\draw[very thick, {Triangle[length = 10pt)]}-{}, shorten <=-2mm] (start.north) to (end.south);
+			\draw[very thick, {Triangle[length = 7pt)]}-{}, shorten <=-2mm] (start.north) to (end.south);
 		\end{tikzpicture}
 
 		\section{{\small \faGit} Projects}
@@ -253,7 +254,7 @@
 			\draw (skill  6.west) node[skillProgressBar, minimum width=0.2*\cvSkillBarWidth] {};
 			\draw (skill  7.west) node[skillProgressBar, minimum width=0.2*\cvSkillBarWidth] {};
 			\draw (skill  8.west) node[skillProgressBar, minimum width=0.7*\cvSkillBarWidth] {};
-			\draw[decorate,decoration={brace,amplitude=5pt, raise=4ex}] (skill 8.west) (skill 1.east) -- (skill 8.east) node[midway, xshift=3.5em]{years};
+			\draw[decorate, decoration={brace, amplitude=5pt, raise=4ex}] (skill 8.west) (skill 1.east) -- (skill 8.east) node[midway, xshift=3.5em]{years};
 		\end{tikzpicture}
 
 	\end{paracol}
