@@ -9,6 +9,10 @@ This is the curriculum vitae of Kafetzis Dimitris, written in latex.
 [![Build Status](https://travis-ci.com/amolofos/CVKafetzisDimitris.svg?token=WmFepTN2ADiZVawdTQqx&branch=master)](https://travis-ci.com/amolofos/CVKafetzisDimitris)
 
 # Change Log
+* 2020-06-30
+    * Created a no icon, no color version
+    * Applied changes based on feedback from Francis and Bing commenters
+    * Applied changes based on feedback from https://resumeworded.com ATS scanning
 * 2020-06-06
     * Initial creation and merge of the two repositories into one.
     * Deletion of the existing content to start from scratch.
@@ -17,7 +21,7 @@ This is the curriculum vitae of Kafetzis Dimitris, written in latex.
 version and one for the Greek.
 
 # TODO
-* Automatic deployment of the build pdf upon merge to master
+Empty list for now
 
 # Inspirations
 Inspirations for this layout have been drawn one by the following templates
