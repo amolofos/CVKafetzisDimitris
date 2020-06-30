@@ -97,7 +97,7 @@
 \fancyhf{}
 
 % Paracol column ratio.
-\columnratio{0.40,0.50}
+\columnratio{0.40, 0.50}
 
 % Remove the default rule under the header
 \renewcommand{\headrulewidth}{0pt}
@@ -108,7 +108,7 @@
 % Define the \section format
 % \titleformat{〈command〉}[〈shape〉]{〈format〉}{〈label〉}{〈sep〉}{〈before〉}[〈after〉]
 \titleformat{\section}
-	{\color{headings}\LARGE\raggedright\center\uppercase}
+	{\color{black}\LARGE\raggedright\center\uppercase}
 	{}
 	{0em}
 	{}
@@ -122,6 +122,8 @@
 % Colors
 % -----------------------------------------------------------------------------
 % See http://latexcolor.com/
+
+\definecolor{black}{HTML}{000000}
 
 % 25% desaturated headings colour for links
 %\definecolor{linkcolor}{HTML}{641c1d}
@@ -383,3 +385,8 @@
 % #4: Date period
 % #5: Text
 \newcommand{\cvExperience}[5]{{#1 \hfill \scriptsize#4}\\ {\scriptsize {\textit{#2}} -- #3.} #5}
+
+% #1: Name of project
+% #2: github link
+% #3: Text
+\newcommand{\cvProject}[3]{{\centerline{#1 \scriptsize -- #2}} #3}
