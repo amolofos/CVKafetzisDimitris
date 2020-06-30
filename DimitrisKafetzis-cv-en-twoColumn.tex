@@ -1,0 +1,237 @@
+\documentclass{CVSoftwareEngineer}
+
+\cvname{Kafetzis, Dimitris Andreas}
+\cvjobtitle{Principal Software Engineer}
+\cvdate{}
+\cvnumberphone{}
+\cvaddress{Potong Pasir, Singapore}
+\cvsite{}
+\cvlinkedin{\href{https://www.linkedin.com/in/kafetzisd}{in/kafetzisd}}
+\cvgithub{\href{https://github.com/amolofos}{github.com/amolofos}}
+\cvmail{kafetzis.dimitris.andreas@gmail.com}
+
+\begin{document}
+
+	\begin{paracol}{2}
+		% Applies text justification.
+		\sloppy
+
+		\begin{tikzpicture}
+			\node[personalDetailsBox] (PersonalDetails){
+
+				\begin{minipage}{\cvSideWidth-0.5cm}
+					\section{\textbf{\cvname}}
+					\begin{center}
+						{\Large\color{black!80}\cvjobtitle \\}
+					\end{center}
+
+					\begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+						\matrix [
+							column 1/.style={anchor=center, contactIcon},
+							column 2/.style={anchor=west, align=left, contactText},
+							column sep=5pt,
+							row sep=5pt] (contact) {
+								\node{\textsc{\faInfoCircle}}; & \node{
+									\begin{varwidth}{\cvSideWidth-1cm}
+										Greek working under \textit{Employment Pass} in Singapore \\
+									\end{varwidth}
+								};\\
+								\ifthenelse{\equal{\cvdate}{}}{}{\node{\textsc{\faBirthdayCake}};   & \node{\cvdate};\\}
+								\ifthenelse{\equal{\cvaddress}{}}{}{\node{\textsc{\faMapMarker}};   & \node{\cvaddress};\\}
+								\ifthenelse{\equal{\cvnumberphone}{}}{}{\node{\textsc{\faPhone}};   & \node{\cvnumberphone};\\}
+								\ifthenelse{\equal{\cvsite}{}}{}{\node{\textsc{\InternetExplorer}}; & \node{\cvsite};\\}
+								\ifthenelse{\equal{\cvlinkedin}{}}{}{\node{\textsc{\faLinkedin}};   & \node{\cvlinkedin};\\}
+								\ifthenelse{\equal{\cvgithub}{}}{}{\node{\textsc{\faGithub}};       & \node{\cvgithub};\\}
+								\ifthenelse{\equal{\cvmail}{}}{}{\node{\textsc{\faAt}};             & \node{\href{mailto:\cvmail}{\cvmail}};\\}
+								\node{\textsc{\faLanguage}};                                        & \node{Languages:};\\
+							};
+					\end{tikzpicture}
+					\begin{tikzpicture}[every node/.style={text depth=0pt, inner sep=0pt, outer sep=0pt}]
+						\matrix [
+							column 1/.style={anchor=east},
+							column 2/.style={anchor=west},
+							column 3/.style={anchor=west, align=left},
+							column sep=5pt,
+							row sep=5pt,
+						] (contact) {
+							\node[languageText]{English};  & \node[languageProgressArea, align=left](language 1){}; & \node[languageTextComment]{}; \\
+							\node[languageText]{Greek};    & \node[languageProgressArea, align=left](language 2){}; & \node[languageTextComment]{Mother language}; \\
+							\node[languageText]{Mandarin}; & \node[languageProgressArea, align=left](language 3){}; & \node[languageTextComment]{Just started}; \\
+							% Added so we add some ysep bottom space to the outer, surounding personalDetailsBox node.
+							\node[languageText]{};         & \node                                              {}; & \node[languageTextComment]{}; \\
+						};
+						\draw (language 1.west) node[languageProgressBar, minimum width=5/5*\cvLanguageBarWidth]   {};
+						\draw (language 2.west) node[languageProgressBar, minimum width=5/5*\cvLanguageBarWidth]   {};
+						\draw (language 3.west) node[languageProgressBar, minimum width=0.1/5*\cvLanguageBarWidth] {};
+					\end{tikzpicture}
+				\end{minipage}
+			};
+		\end{tikzpicture}
+
+		\section{Education}
+		\centerline{Not completed tertiary education}
+		{\scriptsize 2003 - 2009 (DO)} Electrical Engineering and Computer Science, University of Patras, Greece
+
+		\section{Projects}
+		\cvProject
+			{\href{https://github.com/amolofos/automated-workstation-setup}{Automated workstation setup}}
+			{\textit{github}}
+			{\textit{Ansible} scripts automating the setup of a brand new Ubuntu
+				workstation and supporting non-attended updates}
+		\\
+		\\
+		\cvProject
+			{\href{https://github.com/amolofos/cryptography-examples}{Cryptography examples}}
+			{\textit{github}}
+			{\textit{Java \& Python} showcase of different cryptographic
+					algorithms and libraries producing cross language, interchangeable encryption results}
+
+		\section{Daily work activities}
+		\begin{tikzpicture}
+			\pie[polar, explode=0.1, radius=1.2, rotate=0, color = {cvPie!10, cvPie, cvPie!50, cvPie!60, cvPie!30, cvPie!40}]{
+				15/Business analysis,
+				20/Code development,
+				20/System design,
+				15/Code review,
+				15/Production support,
+				15/Mentoring
+			}
+		\end{tikzpicture}
+
+		% Switch to the next paracol column.
+		\switchcolumn
+
+		\section{Work experience}
+		\begin{tikzpicture}][every node/.style={inner sep=0pt, outer sep=0pt}]
+
+			\node[
+				eventDotText]
+				(item 1 header)
+				{\phantom{Evening}};
+			\node[
+				eventDotText]
+				(item 1)
+				{\cvExperience
+					{Principal Software Engineer}
+					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
+					{Singapore}
+					{2018-09 - Today}
+					{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+							\item[\textasteriskcentered] Led a team of 3 engineers with the goal to harden the
+								funding flow ensuring eWallet integrity resulting in a drop of 1 incident per week
+								to 1 per year
+							\item[\textasteriskcentered] Enhanced the performance of slow database queries bring
+								the number of production incidents due to human design error down to zero (0)
+							\item[\textasteriskcentered] Investigated more than 20 high profile production
+								issues and presented 4 sensitive incidents to C level stakeholders
+							\item[\textasteriskcentered] Migrated 80 million lottery bets to renewed,
+								more robust data model
+						\end{enumerate}
+					}
+				};
+			\node[
+				left=\cvTimeDotSepMain of item 1 header,
+				timeDot]
+				(start)
+				{};
+			\node[
+				right=\cvTimeDotSepSecondary of item 1 header,
+				invisibleTimeDot]
+				(startInner)
+				{};
+
+			% item 2
+			\node[
+				below=\cvSectionSep of item 1.south west,
+				eventDotText]
+				(item 2 header)
+				{\phantom{Evening}};
+			\node[
+				below=\cvSectionSep of item 1.south west,
+				eventDotText]
+				(item 2)
+				{\cvExperience
+					{Senior Software Engineer}
+					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
+					{Singapore}
+					{2015-10 - 2018-08 (2yrs 11mos)}
+					{
+						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+							\item[\textasteriskcentered] Coordinated development of cross functional features
+								amongst teams of different locations with a goal to rollout
+								our solution to a new tier 1 customer
+							\item[\textasteriskcentered] Owned the data migration into the new
+								platform including 100 million rows of transaction history and
+								user activity and completed in under 3 hours
+							\item[\textasteriskcentered] Designed distributed queries for Informix database materialising
+								the reporting needs of the Finance and Trading departments
+							\item[\textasteriskcentered] Influenced the release process from code to
+								production increasing the delivery capacity of the team
+							\item[\textasteriskcentered] Rewrote the ansible deployment scripts
+								reducing to zero the release introduced incidents
+						\end{enumerate}
+					}
+				};
+			\node[
+				left=\cvTimeDotSepMain of item 2 header,
+				timeDot]
+				{};
+
+			% item 3
+			\node[
+				below=\cvSectionSep of item 2.south west,
+				eventDotText]
+				(item 3 header)
+				{\phantom{Evening}};
+			\node[
+				below=\cvSectionSep of item 2.south west,
+				eventDotText]
+				(item 3)
+				{\cvExperience{Software Engineer}
+					{\href{http://www.openbet.com}{OpenBet Ltd (Part of NYX Gaming Group)}}
+					{Athens, Greece}
+					{2012-11 - 2015-09 (2 yrs 11mos)}
+					{
+						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+							\item[\textasteriskcentered] Wrote and performed the extraction of
+								one billion rows during uptime and no impact to operations
+							\item[\textasteriskcentered] Integrated with Paypal \& Safecharge
+								payment providers tokenizing credit card information removing the\
+								need for PCI compliance
+						\end{enumerate}
+					}
+				};
+			\node[
+				left=\cvTimeDotSepMain of item 3 header,
+				timeDot]
+				{};
+			\node[
+				below=0cm of item 3.south east,
+				invisibleTimeDot]
+				(endInner)
+				{};
+			\node[
+				left=\cvTimeDotSepMain of item 3 header,
+				invisibleTimeDot]
+				(end)
+				{};
+
+			\draw [eventGroupedLine] (endInner) -- (startInner) node [eventGroupedSideText]{Same department, same product, multiple acquisitions.};
+
+			% Use `shorten <=-10mm` to adjust the position of the arrow.
+			\draw[very thick, {Triangle[length = 7pt)]}-{}, shorten <=-2mm] (start.north) to (end.south);
+		\end{tikzpicture}
+
+		\section{Technology stack}
+		\begin{enumerate}[labelwidth=!, labelindent=0pt, leftmargin=*]
+			\item[\textasteriskcentered] Distributed systems, Linux, RedHat : Architectured distributed linux systems for the past 5 years
+			\item[\textasteriskcentered] Rdbms, informix \& postgres : Reviewed the performance of rdbms systems the past 7 years
+			\item[\textasteriskcentered] Maven, Jenkins etc : Defined the build process of Java and database modules
+			\item[\textasteriskcentered] Ansible \& Python : Established the correct usage of ansible scripts and developed
+				ansible modules reducing the complexity and increasing the
+				effectiveness of the deployment process
+			\item[\textasteriskcentered] Java 8 \& Springboot : Maintained and evolved applications for the past 2 years
+		\end{enumerate}
+
+	\end{paracol}
+\end{document}

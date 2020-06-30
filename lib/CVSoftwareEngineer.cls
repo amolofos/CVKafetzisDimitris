@@ -82,6 +82,9 @@
 % https://download.nus.edu.sg/mirror/ctan/macros/latex/contrib/enumitem/enumitem.pdf
 \RequirePackage{enumitem}
 
+% https://download.nus.edu.sg/mirror/ctan/info/symbols/comprehensive/symbols-a4.pdf
+\usepackage{enumitem}
+
 
 % -----------------------------------------------------------------------------
 % Configurations
@@ -94,7 +97,7 @@
 \fancyhf{}
 
 % Paracol column ratio.
-\columnratio{0.40,0.50}
+\columnratio{0.40, 0.50}
 
 % Remove the default rule under the header
 \renewcommand{\headrulewidth}{0pt}
@@ -105,7 +108,7 @@
 % Define the \section format
 % \titleformat{〈command〉}[〈shape〉]{〈format〉}{〈label〉}{〈sep〉}{〈before〉}[〈after〉]
 \titleformat{\section}
-	{\color{headings}\LARGE\raggedright\center\uppercase}
+	{\color{black}\LARGE\raggedright\center\uppercase}
 	{}
 	{0em}
 	{}
@@ -118,8 +121,13 @@
 % -----------------------------------------------------------------------------
 % Colors
 % -----------------------------------------------------------------------------
+% See http://latexcolor.com/
+
+\definecolor{black}{HTML}{000000}
+
 % 25% desaturated headings colour for links
-\definecolor{linkcolor}{HTML}{641c1d}
+%\definecolor{linkcolor}{HTML}{641c1d}
+\definecolor{linkcolor}{HTML}{000000}
 
 % The color of the large sections
 \definecolor{headings}{HTML}{6A6A6A}
@@ -127,6 +135,21 @@
 \definecolor{cvGreen}{HTML}{357F2D}
 \definecolor{mainblue}{HTML}{002E63}
 
+% Gray (X11 gray) #BEBEBE \definecolor{gray(x11gray)}{rgb}{0.75, 0.75, 0.75}
+\definecolor{cvBar}{HTML}{BEBEBE}
+\definecolor{cvPie}{HTML}{BEBEBE}
+
+% Lavender gray #C4C3D0 \definecolor{lavendergray}{rgb}{0.77, 0.76, 0.82}
+\definecolor{lavendergray}{HTML}{C4C3D0}
+
+% Liver #534B4F \definecolor{liver}{rgb}{0.33, 0.29, 0.31}
+\definecolor{liver}{HTML}{534B4F}
+
+% Taupe gray #8B8589 \definecolor{taupegray}{rgb}{0.55, 0.52, 0.54}
+\definecolor{taupegray}{HTML}{8B8589}
+
+% Trolley Grey #808080 \definecolor{trolleygrey}{rgb}{0.5, 0.5, 0.5}
+\definecolor{trolleygrey}{HTML}{808080}
 
 % -----------------------------------------------------------------------------
 % tikz definition
@@ -166,7 +189,7 @@
 		rectangle,
 		rounded corners=0ex,
 		draw,
-		cvGreen,
+		cvBar,
 	},
 	languageProgressBar/.style={
 		minimum height=\cvLanguageBarHeight,
@@ -174,7 +197,7 @@
 		rounded corners=0ex,
 		draw,
 		fill,
-		cvGreen,
+		cvBar,
 		anchor=west,
 	},
 	skillText/.style={},
@@ -196,7 +219,7 @@
 		rectangle,
 		rounded corners=0ex,
 		draw,
-		cvGreen,
+		cvBar,
 		anchor=west,
 		line width=0pt,
 		inner xsep=10pt,
@@ -226,7 +249,7 @@
 	invisibleTimeDot/.style = {
 		circle,
 		minimum width=3pt,
-		scale=0.5,
+		scale=0.2,
 		anchor=center,
 	},
 	timeDot/.style = {
@@ -356,10 +379,14 @@
 \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
 \newcommand{\cvjobtitle}[1]{\renewcommand{\cvjobtitle}{#1}}
 
-\newcommand{\cvSection}[1]{\Large\textbf{#1}}
 % #1: Name of position
 % #2: Name of the company
 % #3: Location
 % #4: Date period
 % #5: Text
 \newcommand{\cvExperience}[5]{{#1 \hfill \scriptsize#4}\\ {\scriptsize {\textit{#2}} -- #3.} #5}
+
+% #1: Name of project
+% #2: github link
+% #3: Text
+\newcommand{\cvProject}[3]{{\centerline{#1 \scriptsize -- #2}} #3}
