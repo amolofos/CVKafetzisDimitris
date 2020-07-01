@@ -97,7 +97,7 @@
 \fancyhf{}
 
 % Paracol column ratio.
-\columnratio{0.40, 0.50}
+\columnratio{0.50, 0.50}
 
 % Remove the default rule under the header
 \renewcommand{\headrulewidth}{0pt}
@@ -115,7 +115,7 @@
 	[\titlerule]
 
 % Spacing around section titles, the order is: left, before and after
-\titlespacing{\section}{0pt}{0pt}{8pt}
+\titlespacing{\section}{0pt}{0pt}{4pt}
 
 
 % -----------------------------------------------------------------------------
@@ -241,7 +241,7 @@
 		align=justify,
 	},
 	eventDotText/.style = {
-		text width=\cvMainWidth-\cvTimeDotSepMain,
+		text width=\cvMainWidth+\cvSideWidth,
 		black,
 		anchor=north west,
 		align=justify,

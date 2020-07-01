@@ -1,7 +1,9 @@
 # Table of Contents
 1. [Overview](#Ooerview)
 2. [Change Log](#change-log)
-3. [License](#license)
+3. [TODO](#todo)
+4. [Inspirations](#inspirations)
+5. [License](#license)
 
 # Overview
 This is the curriculum vitae of Kafetzis Dimitris, written in latex.
