@@ -11,7 +11,7 @@ libDirectory="$sourceDirectory/lib"
 
 export TEXINPUTS="$libDirectory:$TEXINPUTS"
 
-function showhelp {
+function show_help {
   echo "Parameters
 * -h : shows this help
 * clean : removes the target directory

@@ -1,5 +1,7 @@
 \documentclass{CVSoftwareEngineer}
 
+\setlength\cvEventTextWidth{\cvMainWidth+\cvSideWidth}
+
 \cvname{Kafetzis, Dimitris Andreas}
 \cvjobtitle{Principal Software Engineer}
 \cvaddress{Potong Pasir, Singapore}
@@ -10,8 +12,11 @@
 \begin{document}
 
 	\section{\textbf{\cvname}}
-	{\Large\color{black!80}\cvjobtitle} \hfill \hfill \space \cvlinkedin, \space \cvgithub \\
-	Greek working under \textit{Employment Pass} in \cvaddress, \hfill \space \href{mailto:\cvmail}{\cvmail}
+	\begin{center}
+		\href{mailto:\cvmail}{\cvmail} \\
+		\space \cvlinkedin \space \cvgithub \\
+		Greek working under \textit{Employment Pass} in \cvaddress
+	\end{center}
 
 	\section{Work experience}
 	\begin{tikzpicture}][every node/.style={inner sep=0pt, outer sep=0pt}]
@@ -134,33 +139,16 @@
 		\draw[very thick, {Triangle[length = 7pt)]}-{}, shorten <=-2mm] (start.north) to (end.south);
 	\end{tikzpicture}
 
-	\columnratio{0.60, 0.30}
-	\begin{paracol}{2}
-		\section{Technology stack}
-		\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-			\item[\textasteriskcentered] Distributed systems, Linux, RedHat : Architectured distributed linux systems for the past 5 years
-			\item[\textasteriskcentered] Rdbms, informix \& postgres : Reviewed the performance of rdbms systems the past 7 years
-			\item[\textasteriskcentered] Maven, Jenkins etc : Defined the build process of Java and database modules
-			\item[\textasteriskcentered] Ansible \& Python : Established the correct usage of ansible scripts and developed
-				ansible modules reducing the complexity and increasing the
-				effectiveness of the deployment process
-			\item[\textasteriskcentered] Java 8 \& Springboot : Maintained and evolved applications for the past 2 years
-		\end{enumerate}
-		\switchcolumn
-		\section{Projects}
-		\cvProject
-			{\href{https://github.com/amolofos/automated-workstation-setup}{Automated workstation setup}}
-			{\textit{github}}
-			{\textit{Ansible} scripts automating the setup of a brand new Ubuntu
-				workstation and supporting non-attended updates}
-		\\
-		\\
-		\cvProject
-			{\href{https://github.com/amolofos/cryptography-examples}{Cryptography examples}}
-			{\textit{github}}
-			{\textit{Java \& Python} showcase of different cryptographic
-					algorithms and libraries producing cross language, interchangeable encryption results}
-	\end{paracol}
+	\section{Technology stack}
+	\begin{enumerate}[labelwidth=!, labelindent=0pt, leftmargin=*]
+		\item[\textasteriskcentered] Distributed systems, Linux, RedHat : Architectured distributed linux systems for the past 5 years
+		\item[\textasteriskcentered] Rdbms, informix \& postgres : Reviewed the performance of rdbms systems the past 7 years
+		\item[\textasteriskcentered] Maven, Jenkins etc : Defined the build process of Java and database modules
+		\item[\textasteriskcentered] Ansible \& Python : Established the correct usage of ansible scripts and developed
+			ansible modules reducing the complexity and increasing the
+			effectiveness of the deployment process
+		\item[\textasteriskcentered] Java 8 \& Springboot : Maintained and evolved applications for the past 2 years
+	\end{enumerate}
 
 	\section{Education}
 	Not completed tertiary education \\

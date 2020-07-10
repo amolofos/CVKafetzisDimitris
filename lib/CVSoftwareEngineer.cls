@@ -97,7 +97,7 @@
 \fancyhf{}
 
 % Paracol column ratio.
-\columnratio{0.50, 0.50}
+\columnratio{0.40, 0.45}
 
 % Remove the default rule under the header
 \renewcommand{\headrulewidth}{0pt}
@@ -241,7 +241,7 @@
 		align=justify,
 	},
 	eventDotText/.style = {
-		text width=\cvMainWidth+\cvSideWidth,
+		text width=\cvEventTextWidth,
 		black,
 		anchor=north west,
 		align=justify,
@@ -339,6 +339,8 @@
 \setlength\cvSideWidth{0.4\paperwidth-\cvMargin}
 \newlength\cvMainWidth
 \setlength\cvMainWidth{\paperwidth-4\cvMargin-\cvSideWidth}
+\newlength\cvEventTextWidth
+\setlength\cvEventTextWidth{\cvMainWidth}
 
 \newlength\cvLanguageBarWidth
 \setlength\cvLanguageBarWidth{5em}
