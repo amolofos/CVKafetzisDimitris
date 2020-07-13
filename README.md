@@ -11,6 +11,13 @@ This is the curriculum vitae of Kafetzis Dimitris, written in latex.
 [![Build Status](https://travis-ci.com/amolofos/CVKafetzisDimitris.svg?token=WmFepTN2ADiZVawdTQqx&branch=master)](https://travis-ci.com/amolofos/CVKafetzisDimitris)
 
 # Change Log
+* 2020-07-13
+    * Added a one column layout
+    * Added a two column anonymous cv
+    * Changed two column cv
+        * Removed the work experience subgroup
+        * Updated the skills and technology stack
+        * Remove cryptography project as it is not finished yet
 * 2020-06-30
     * Created a no icon, no color version
     * Applied changes based on feedback from Francis and Bing commenters
@@ -21,9 +28,6 @@ This is the curriculum vitae of Kafetzis Dimitris, written in latex.
 * Pre 2020-06
     * There were two separate repositories - one for the English
 version and one for the Greek.
-
-# TODO
-Empty list for now
 
 # Inspirations
 Inspirations for this layout have been drawn one by the following templates

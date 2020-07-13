@@ -296,15 +296,6 @@
 		inner xsep=10pt,
 		inner ysep=0pt,
 	},
-	personalDetailsBox1/.style = {
-		%black,
-		%draw,
-		%very thick,
-		rectangle,
-		%rounded corners,
-		inner xsep=0pt,
-		inner ysep=-6pt,
-	},
 }
 
 
@@ -324,11 +315,6 @@
 \setlength\columnsep{0.05\textwidth}
 
 % Define more lengths.
-\newlength\sidewidth
-\setlength\sidewidth{0.4\paperwidth-\margin}
-\newlength\mainwidth
-\setlength\mainwidth{\paperwidth-4\margin-\sidewidth}
-
 \newlength\cvNodeSep
 \setlength\cvNodeSep{0.75cm}
 \newlength\cvtimeDotDiameter

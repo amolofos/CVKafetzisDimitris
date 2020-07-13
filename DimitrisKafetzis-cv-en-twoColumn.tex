@@ -1,5 +1,18 @@
 \documentclass{CVSoftwareEngineer}
 
+\setlength\cvMargin{1cm}
+\setlength\cvSideWidth{0.35\paperwidth-\cvMargin}
+\setlength\cvMainWidth{\paperwidth-\cvSideWidth-\cvMargin}
+\setlength\cvEventTextWidth{\cvMainWidth-3\cvMargin}
+
+\setlength\cvNodeSep{0.75cm}
+\setlength\cvtimeDotDiameter{3pt}
+\setlength{\cvSectionSep}{0.30cm}
+\setlength\cvSkillBarWidth{3cm}
+\setlength\cvSkillBarHeight{0.01cm}
+\setlength\cvLanguageBarWidth{2cm}
+\setlength\cvLanguageBarHeight{0.75em}
+
 \cvname{Kafetzis, Dimitris Andreas}
 \cvjobtitle{Principal Software Engineer}
 \cvdate{}
@@ -12,6 +25,7 @@
 
 \begin{document}
 
+	\columnratio{0.35, 0.45}
 	\begin{paracol}{2}
 		% Applies text justification.
 		\sloppy
@@ -19,7 +33,7 @@
 		\begin{tikzpicture}
 			\node[personalDetailsBox] (PersonalDetails){
 
-				\begin{minipage}{\cvSideWidth-1cm}
+				\begin{minipage}{\cvSideWidth}
 					\section{\textbf{\cvname}}
 					\begin{center}
 						{\Large\color{black!80}\cvjobtitle \\}
@@ -32,7 +46,7 @@
 							column sep=5pt,
 							row sep=5pt] (contact) {
 								\node{\textsc{\faInfoCircle}}; & \node{
-									\begin{varwidth}{\cvSideWidth-1cm}
+									\begin{varwidth}{\cvSideWidth}
 										Greek working under \textit{Employment Pass} in Singapore \\
 									\end{varwidth}
 								};\\
@@ -70,7 +84,7 @@
 
 		\section{Education}
 		\centerline{Not completed tertiary education}
-		{\scriptsize 2003 - 2009 (DO)} Electrical Engineering and Computer Science, University of Patras, Greece
+		DO, Electrical Engineering and Computer Science, University of Patras, Greece \hfill {\scriptsize Sep 2003 - Jul 2009}
 
 		\section{Projects}
 		\cvProject
@@ -78,23 +92,23 @@
 			{\textit{github}}
 			{\textit{Ansible} scripts automating the setup of a brand new Ubuntu
 				workstation and supporting non-attended updates}
-		\\
-		\\
-		\cvProject
-			{\href{https://github.com/amolofos/cryptography-examples}{Cryptography examples}}
-			{\textit{github}}
-			{\textit{Java \& Python} showcase of different cryptographic
-					algorithms and libraries producing cross language, interchangeable encryption results}
+%		\\
+%		\\
+%		\cvProject
+%			{\href{https://github.com/amolofos/cryptography-examples}{Cryptography examples}}
+%			{\textit{github}}
+%			{\textit{Java \& Python} showcase of different cryptographic
+%					algorithms and libraries producing cross language, interchangeable encryption results}
 
 		\section{Daily work activities}
 		\begin{tikzpicture}
 			\pie[polar, explode=0.1, radius=1.2, rotate=0, color = {cvPie!10, cvPie, cvPie!50, cvPie!60, cvPie!30, cvPie!40}]{
-				15/Code review,
-				20/Code development,
 				20/System design,
 				15/Business analysis,
+				15/Reviews,
+				15/Mentoring,
 				15/Production support,
-				15/Mentoring
+				20/Development
 			}
 		\end{tikzpicture}
 
@@ -115,7 +129,7 @@
 					{Principal Software Engineer}
 					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
 					{Singapore}
-					{2018-09 - Today}
+					{Sept 2018 - Present}
 					{\begin{enumerate}[labelindent=0pt, nosep, labelwidth=!, leftmargin=*]
 							\item[\textasteriskcentered] Led a team of 3 engineers with the goal to harden the
 								funding flow ensuring eWallet integrity resulting in a drop of 1 incident per week
@@ -154,7 +168,7 @@
 					{Senior Software Engineer}
 					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
 					{Singapore}
-					{2015-10 - 2018-08 (2yrs 11mos)}
+					{Oct 2015 - Aug 2018 (2yrs 11mos)}
 					{
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
 							\item[\textasteriskcentered] Coordinated development of cross functional features
@@ -167,7 +181,7 @@
 								the reporting needs of the Finance and Trading departments
 							\item[\textasteriskcentered] Influenced the release process from code to
 								production increasing the delivery capacity of the team
-							\item[\textasteriskcentered] Rewrote the ansible deployment scripts
+							\item[\textasteriskcentered] Refactored the ansible deployment scripts
 								reducing to zero the release introduced incidents
 						\end{enumerate}
 					}
@@ -190,7 +204,7 @@
 				{\cvExperience{Software Engineer}
 					{\href{http://www.openbet.com}{OpenBet Ltd (Part of NYX Gaming Group)}}
 					{Athens, Greece}
-					{2012-11 - 2015-09 (2 yrs 11mos)}
+					{Nov 2012 - Sept 2015 (2 yrs 11mos)}
 					{
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
 							\item[\textasteriskcentered] Wrote and performed the extraction of
@@ -216,21 +230,26 @@
 				(end)
 				{};
 
-			\draw [eventGroupedLine] (endInner) -- (startInner) node [eventGroupedSideText]{Same department, same product, multiple acquisitions.};
+			%\draw [eventGroupedLine] (endInner) -- (startInner) node [eventGroupedSideText]{Same department, same product, multiple acquisitions.};
 
 			% Use `shorten <=-10mm` to adjust the position of the arrow.
 			\draw[very thick, {Triangle[length = 7pt)]}-{}, shorten <=-2mm] (start.north) to (end.south);
 		\end{tikzpicture}
 
-		\section{Technology stack}
-		\begin{enumerate}[labelwidth=!, labelindent=0pt, leftmargin=*]
-			\item[\textasteriskcentered] Distributed systems, Linux, RedHat : Architectured distributed linux systems for the past 5 years
-			\item[\textasteriskcentered] Rdbms, informix \& postgres : Reviewed the performance of rdbms systems the past 7 years
-			\item[\textasteriskcentered] Maven, Jenkins etc : Defined the build process of Java and database modules
-			\item[\textasteriskcentered] Ansible \& Python : Established the correct usage of ansible scripts and developed
-				ansible modules reducing the complexity and increasing the
-				effectiveness of the deployment process
-			\item[\textasteriskcentered] Java 8 \& Springboot : Maintained and evolved applications for the past 2 years
+		\section{Skills \& Technology stack}
+		%[labelwidth=!, labelindent=0pt, leftmargin=*]
+		\begin{enumerate}[leftmargin=*, rightmargin=10pt]
+			\item[\textasteriskcentered] \textit{Agile}: Utilised a combination of Kanban and Scrum techniques in small (4 members)
+				and larger (15+ member) teams
+			\item[\textasteriskcentered] \textit{Distributed systems}: Implemented features that spanned across multiple services,
+				APIs and modules. Architectured distributed Linux based systems for the past 5 years
+			\item[\textasteriskcentered] \textit{Rdbms, informix \& postgres}: Crafted relational database queries and reviewed
+				the performance of data intensive rdbms systems for the past 7 years
+			\item[\textasteriskcentered] \textit{Maven, Jenkins etc}: Defined the build process of Java and database modules
+			\item[\textasteriskcentered] \textit{Ansible \& Python}: Established the correct usage of Ansible scripts reducing the complexity
+				of the deployment process and developed Ansible modules increasing the effectiveness of our scripts
+			\item[\textasteriskcentered] \textit{Java \& Springboot}: Enhanced APIs based on Springboot Java 8
+				applications for the past 2 years
 		\end{enumerate}
 
 	\end{paracol}
