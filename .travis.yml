@@ -20,6 +20,7 @@ before_deploy:
   - git tag $TRAVIS_TAG
   - mv target/DimitrisKafetzis-cv-en-anonymised.pdf target/DimitrisKafetzis-cv-en-anonymised.$TRAVIS_TAG.pdf
   - mv target/DimitrisKafetzis-cv-en-colorsAndIcons.pdf target/DimitrisKafetzis-cv-en-colorsAndIcons.$TRAVIS_TAG.pdf
+  - mv target/DimitrisKafetzis-cv-en-oneColumn.pdf target/DimitrisKafetzis-cv-en-oneColumn.$TRAVIS_TAG.pdf
   - mv target/DimitrisKafetzis-cv-en-twoColumn.pdf target/DimitrisKafetzis-cv-en-twoColumn.$TRAVIS_TAG.pdf
 
 deploy:
@@ -28,6 +29,7 @@ deploy:
   file:
     - target/DimitrisKafetzis-cv-en-anonymised.$TRAVIS_TAG.pdf
     - target/DimitrisKafetzis-cv-en-colorsAndIcons.$TRAVIS_TAG.pdf
+    - target/DimitrisKafetzis-cv-en-oneColumn.$TRAVIS_TAG.pdf
     - target/DimitrisKafetzis-cv-en-twoColumn.$TRAVIS_TAG.pdf
   skip_cleanup: true
   on:

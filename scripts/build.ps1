@@ -8,6 +8,7 @@ $global:testOutputDirectory="$sourceDirectory\target"
 $global:templateDirectory="$sourceDirectory\LatexTemplateCVs"
 $global:libDirectory="$sourceDirectory\lib"
 $global:localTexDirectory="C:\Users\kafet\AppData\Roaming\MiKTeX\tex\latex"
+$global:texCmdErrorPattern="Fatal error occurred,"
 
 function show-help {
 	Write-Output "Parameters
@@ -44,12 +45,15 @@ function compile {
 		New-Item -ItemType Directory -Name $(Split-Path $testOutputDirectory -Leaf)
 	}
 
+	Copy-Item "$libDirectory\CVSoftwareEngineer.cls" "$(Split-Path $testOutputDirectory -Leaf)"
 	Get-ChildItem -Exclude "$(Split-Path $libDirectory -Leaf),$(Split-Path $templateDirectory -Leaf),$(Split-Path $testOutputDirectory -Leaf)" |
 		Where-Object {$_.extension -eq ".tex"} |
 		Foreach-Object {
 			$f = $_.Name
 
 			log "Compiling file $f."
+
+			Copy-Item "$sourceDirectory\$f" "$(Split-Path $testOutputDirectory -Leaf)\$f"
 			
 			$allArgs = @(
 				"-halt-on-error",
@@ -57,10 +61,20 @@ function compile {
 				"-interaction=nonstopmode",
 				"--output-directory=$testOutputDirectory",
 				"--output-format=pdf",
-				"$f"
+				"$(Split-Path $testOutputDirectory -Leaf)\$f"
 			)
-			
-			Invoke-Expression "$texCMD $allArgs"
+
+			try {
+				Invoke-Expression "$texCMD $allArgs" | Out-String -OutVariable cmdOut
+			} catch {
+				log "Failed to compile file $f."
+			}
+
+			$cmdErrors = (Select-String -InputObject $cmdOut -Pattern $texCmdErrorPattern).Matches
+			if ($cmdErrors.Count -gt 0) {
+				log "Failed to compile file $f."
+				exit 1
+			}
 	}
 }
 
