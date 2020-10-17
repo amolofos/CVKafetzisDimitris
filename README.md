@@ -1,8 +1,8 @@
 # Table of Contents
 1. [Overview](#Ooerview)
 2. [Change Log](#change-log)
-3. [TODO](#todo)
-4. [Inspirations](#inspirations)
+3. [Inspirations](#inspirations)
+4. [Build](#build)
 5. [License](#license)
 
 # Overview
@@ -11,6 +11,8 @@ This is the curriculum vitae of Kafetzis Dimitris, written in latex.
 [![Build Status](https://travis-ci.com/amolofos/CVKafetzisDimitris.svg?token=WmFepTN2ADiZVawdTQqx&branch=master)](https://travis-ci.com/amolofos/CVKafetzisDimitris)
 
 # Change Log
+* 2020-10-17
+    * Add SRE role
 * 2020-07-13
     * Added a one column layout
     * Added a two column anonymous cv
@@ -47,6 +49,17 @@ Elegant solutions from
 CI/CD integration from
 * [A short postmortem on moving to Docker for LaTeX continuous integration](https://ljvmiranda921.github.io/notebook/2018/04/23/postmortem-shift-to-docker/) & [github cv](https://github.com/ljvmiranda921/cv) by Lj Miranda (ljvmiranda921)
 * [Using Travis CI with LaTeX documents](https://shankarkulumani.com/2018/10/travis-and-latex.html) by Shankar Kulumani
+
+# Build
+* Linux
+```
+$ ./scripts/build.sh clean compile
+```
+* Windows
+```
+$ .\build.ps1 clean compile
+```
+
 
 # License
 The content of this repository are restricted under the following licenses
