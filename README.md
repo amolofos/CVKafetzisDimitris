@@ -52,14 +52,13 @@ CI/CD integration from
 
 # Build
 * Linux
-```
-$ ./scripts/build.sh clean compile
-```
+    ```
+    $ ./scripts/build.sh clean compile
+    ```
 * Windows
-```
-$ .\build.ps1 clean compile
-```
-
+    ```
+    $ .\build.ps1 clean compile
+    ```
 
 # License
 The content of this repository are restricted under the following licenses
