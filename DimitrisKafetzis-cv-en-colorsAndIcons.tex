@@ -110,16 +110,48 @@
 
 			\node[
 				eventDotText]
-				(item 1 header)
+				(item 4 header)
 				{\phantom{Evening}};
 			\node[
 				eventDotText]
-				(item 1)
+				(item 4)
+				{\cvExperience
+					{Principal Integration Engineer | Site Reliability Engineer}
+					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
+					{Singapore}
+					{2020-08 - Today}
+					{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+							\item[*] Defined the initial process for an SRE rota across two teams located in multiple locations
+							\item[*] Configured prometheus and grafana infrastructure reporting accurately the production issues reducing the noise of the daily SRE checks
+						\end{enumerate}
+					}
+				};
+			\node[
+				left=\cvTimeDotSepMain of item 4 header,
+				timeDot]
+				(start)
+				{};
+			\node[
+				right=\cvTimeDotSepSecondary of item 4 header,
+				invisibleTimeDot]
+				(startInner)
+				{};
+
+			% item 3
+			\node[
+				below=\cvSectionSep of item 4.south west,
+				eventDotText]
+				(item 3 header)
+				{\phantom{Evening}};
+			\node[
+				below=\cvSectionSep of item 4.south west,
+				eventDotText]
+				(item 3)
 				{\cvExperience
 					{Principal Software Engineer}
 					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
 					{Singapore}
-					{2018-09 - Today}
+					{2018-09 - 2020-07}
 					{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
 							\item[*] Hardened the funding flow ensuring eWallet integrity
 							\item[*] Enchanced the performance of slow database queries
@@ -130,24 +162,18 @@
 					}
 				};
 			\node[
-				left=\cvTimeDotSepMain of item 1 header,
+				left=\cvTimeDotSepMain of item 3 header,
 				timeDot]
-				(start)
-				{};
-			\node[
-				right=\cvTimeDotSepSecondary of item 1 header,
-				invisibleTimeDot]
-				(startInner)
 				{};
 
 			% item 2
 			\node[
-				below=\cvSectionSep of item 1.south west,
+				below=\cvSectionSep of item 3.south west,
 				eventDotText]
 				(item 2 header)
 				{\phantom{Evening}};
 			\node[
-				below=\cvSectionSep of item 1.south west,
+				below=\cvSectionSep of item 3.south west,
 				eventDotText]
 				(item 2)
 				{\cvExperience
@@ -173,16 +199,16 @@
 				timeDot]
 				{};
 
-			% item 3
+			% item 1
 			\node[
 				below=\cvSectionSep of item 2.south west,
 				eventDotText]
-				(item 3 header)
+				(item 1 header)
 				{\phantom{Evening}};
 			\node[
 				below=\cvSectionSep of item 2.south west,
 				eventDotText]
-				(item 3)
+				(item 1)
 				{\cvExperience{Software Engineer}
 					{\href{http://www.openbet.com}{OpenBet Ltd (Part of NYX Gaming Group)}}
 					{Athens, Greece}
@@ -198,16 +224,16 @@
 					}
 				};
 			\node[
-				left=\cvTimeDotSepMain of item 3 header,
+				left=\cvTimeDotSepMain of item 1 header,
 				timeDot]
 				{};
 			\node[
-				below=0cm of item 3.south east,
+				below=0cm of item 1.south east,
 				invisibleTimeDot]
 				(endInner)
 				{};
 			\node[
-				left=\cvTimeDotSepMain of item 3 header,
+				left=\cvTimeDotSepMain of item 1 header,
 				invisibleTimeDot]
 				(end)
 				{};
