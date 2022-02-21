@@ -322,11 +322,14 @@
 \newlength\cvMargin
 \setlength\cvMargin{1cm}
 \newlength\cvSideWidth
-\setlength\cvSideWidth{0.4\paperwidth-\cvMargin}
+\setlength\cvSideWidth{0.40\paperwidth-\cvMargin}
 \newlength\cvMainWidth
 \setlength\cvMainWidth{\paperwidth-4\cvMargin-\cvSideWidth}
 \newlength\cvEventTextWidth
 \setlength\cvEventTextWidth{\cvMainWidth}
+
+\newlength\cvSideWidthText
+\setlength\cvSideWidthText{\cvSideWidth}
 
 \newlength\cvLanguageBarWidth
 \setlength\cvLanguageBarWidth{5em}
