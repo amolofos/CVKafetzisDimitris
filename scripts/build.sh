@@ -58,6 +58,12 @@ done
 shift $((OPTIND-1))
 [ "${1:-}" = "--" ] && shift
 
+
+if [ "$#" -eq 0 ]; then
+	show_help
+	exit 0
+fi
+
 log $@
 for stage in $@; do
 	log "Processing stage = $stage."
