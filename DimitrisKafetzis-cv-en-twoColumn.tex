@@ -82,8 +82,8 @@
 
 		\begin{varwidth}{\cvSideWidthText}
 			\centerline{}
-			My experience spans across 9+ YoE designing and building heavily transactional, distributed,
-			relational database backed systems, The last 2 years I have made a shift on the SRE problem domain.
+			My experience spans across 10 YoE designing and building heavily transactional, distributed,
+			relational database backed systems. The last 2 years I have made a shift on the SRE problem domain.
 		\end{varwidth}
 
 		\section{Education}
@@ -94,13 +94,12 @@
 
 		\section{Daily work activities}
 		\begin{tikzpicture}
-			\pie[polar, explode=0.1, radius=1.2, rotate=0, color = {cvPie!10, cvPie, cvPie!50, cvPie!60, cvPie!30, cvPie!40}]{
-				20/System design,
-				15/Business analysis,
+			\pie[polar, explode=0.1, radius=1.2, rotate=0, color = {cvPie!10, cvPie!20, cvPie!30, cvPie!40, cvPie!50}]{
 				15/Reviews,
-				15/Mentoring,
-				15/Production support,
-				20/Development
+				25/Production support,
+				25/Development,
+				20/System design,
+				15/Mentoring
 			}
 		\end{tikzpicture}
 
@@ -120,12 +119,15 @@
 				(item 5)
 				{\cvExperience
 					{Site Reliabily Engineer (SRE)}
-					{Undisclosed - under probation}
+					{\href{https://www.bytedance.com/en}{Bytedance}}
 					{Singapore}
-					{2021-09 - Today}
-					{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-						\item[\textasteriskcentered] Developed a side car measuring accurately the availability SLI of 150 services public facing services.
-					\end{enumerate}
+					{Sept 2021 - Present}
+					{
+						\\ Joined the newly formed SRE team supported the Global E-commerce function of TikTok
+						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+							\item[\textasteriskcentered] Implemented a Kubernetes sidecar measuring the availability SLI of more than 200 HTTP services
+							\item[\textasteriskcentered] Designed and implemented an incident record tool reducing the manual bookkeeping activities during oncall cases
+						\end{enumerate}
 					}
 				};
 			\node[
@@ -149,9 +151,10 @@
 					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
 					{Singapore}
 					{2020-08 - 2021-09 (1yr 1mo)}
-					{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+					{
+						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
 							\item[\textasteriskcentered] Defined the initial process for an SRE rota across two teams located in multiple locations
-							\item[\textasteriskcentered]] Configured prometheus and grafana infrastructure reducing the manual daily SRE monitoring activities
+							\item[\textasteriskcentered] Configured prometheus and grafana infrastructure reducing the manual daily SRE monitoring activities
 						\end{enumerate}
 					}
 				};
@@ -180,7 +183,8 @@
 					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
 					{Singapore}
 					{2018-09 - 2020-07 (1yr 11mos)}
-					{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+					{
+						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
 							\item[\textasteriskcentered] Hardened the funding flow ensuring eWallet integrity
 							\item[\textasteriskcentered] Enchanced the performance of slow database queries
 							\item[\textasteriskcentered] Investigated high profile production issues and present
@@ -211,8 +215,6 @@
 					{Oct 2015 - Aug 2018 (2yrs 11mos)}
 					{
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-							\item[\textasteriskcentered] Coordinated cross functional features teams
-								in multiple locations onboarding a tier 1 customer
 							\item[\textasteriskcentered] Owned the data migration of 100 million rows of
 								transaction history completed in under 3 hours
 							\item[\textasteriskcentered] Designed distributed reportingqueries for Informix
@@ -277,17 +279,15 @@
 	\section{Skills \& Technology stack}
 	%[labelwidth=!, labelindent=0pt, leftmargin=*]
 	\begin{enumerate}[leftmargin=*, rightmargin=10pt]
-		\item[\textasteriskcentered] \textit{Agile}: Utilised a combination of Kanban and Scrum techniques in small (4 members)
-			and larger teams
 		\item[\textasteriskcentered] \textit{Distributed systems}: Implemented features that spanned across multiple services,
 			APIs and modules on distributed Linux based systems.
 		\item[\textasteriskcentered] \textit{Rdbms, informix \& postgres}: Crafted queries and reviewed the performance of data
 			intensive rdbms systems
-		\item[\textasteriskcentered] \textit{Maven, Jenkins etc}: Defined the build process of Java and database modules
 		\item[\textasteriskcentered] \textit{Ansible \& Python}: Established the correct usage of Ansible scripts reducing the complexity
 			of the deployment process and developed Ansible modules increasing the effectiveness of our scripts
 		\item[\textasteriskcentered] \textit{Java \& Springboot}: Enhanced APIs based on Springboot Java 8
 			applications for 2 years
+		\item[\textasteriskcentered] \textit{Golang}: Built HTTP and RPC APIs and created tools internal to SRE processes
 	\end{enumerate}
 
 \end{document}

@@ -77,8 +77,8 @@
 
 		\section{{\small \faInfo} About me}
 		\begin{varwidth}{\cvSideWidthText}
-			My experience spans across 9+ YoE designing and building heavily transactional, distributed,
-			relational database backed systems, The last 2 years I have made a shift on the SRE problem domain. \\
+			My experience spans across 10 YoE designing and building heavily transactional, distributed,
+			relational database backed systems. The last 2 years I have made a shift on the SRE problem domain. \\
 		\end{varwidth}
 
 		\section{{\small \faUniversity} Education}
@@ -91,13 +91,12 @@
 
 		\section{{\small \faCalendar} Daily work activities}
 		\begin{tikzpicture}
-			\pie[polar, explode=0.1, radius=1.2, rotate=-60, color = {green!10, lime, brown!50, yellow!60, red!30, blue!40}]{
-				15/Mentoring,
-				15/Code review,
+			\pie[polar, explode=0.1, radius=1.2, rotate=0, color = {cvPie!10, cvPie!20, cvPie!30, cvPie!40, cvPie!50}]{
+				15/Reviews,
+				25/Production support,
+				25/Development,
 				20/System design,
-				20/Code development,
-				15/Production support,
-				15/Business analysis
+				15/Mentoring
 			}
 		\end{tikzpicture}
 
@@ -117,12 +116,15 @@
 				(item 5)
 				{\cvExperience
 					{Site Reliabily Engineer (SRE)}
-					{Undisclosed - under probation}
+					{\href{https://www.bytedance.com/en}{Bytedance}}
 					{Singapore}
-					{2021-09 - Today}
-					{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-						\item[\textasteriskcentered] Developed a side car measuring accurately the availability SLI of 150 services public facing services.
-					\end{enumerate}
+					{Sept 2021 - Present}
+					{
+						\\ Joined the newly formed SRE team supported the Global E-commerce function of TikTok
+						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+							\item[\textasteriskcentered] Implemented a Kubernetes sidecar measuring the availability SLI of more than 200 HTTP services
+							\item[\textasteriskcentered] Designed and implemented an incident record tool reducing the manual bookkeeping activities during oncall cases
+						\end{enumerate}
 					}
 				};
 			\node[
@@ -146,7 +148,8 @@
 					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
 					{Singapore}
 					{2020-08 - 2021-09 (1yr 1mo)}
-					{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+					{
+						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
 							\item[\textasteriskcentered] Defined the initial process for an SRE rota across two teams located in multiple locations
 							\item[\textasteriskcentered] Configured prometheus and grafana infrastructure reducing the manual daily SRE monitoring activities
 						\end{enumerate}
@@ -177,7 +180,8 @@
 					{\href{https://www.sgdigital.com/}{SG Digital (Division of Scientific Games Corporation)}}
 					{Singapore}
 					{2018-09 - 2020-07 (1yr 11mos)}
-					{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+					{
+						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
 							\item[\textasteriskcentered] Hardened the funding flow ensuring eWallet integrity
 							\item[\textasteriskcentered] Enchanced the performance of slow database queries
 							\item[\textasteriskcentered] Investigated high profile production issues and present
@@ -208,8 +212,6 @@
 					{2015-10 - 2018-08 (2yrs 11mos)}
 					{
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-							\item[\textasteriskcentered] Coordinated cross functional features teams
-								in multiple locations, part of onboarding a new tier 1 customer
 							\item[\textasteriskcentered] Owned the data migration of 100 million rows of
 								transaction history completed in under 3 hours
 							\item[\textasteriskcentered] Designed distributed reportingqueries for Informix
@@ -286,6 +288,7 @@
 				\node[skillText]{Java 8 \& Springboot};      & \node[skillProgressArea, align=left](skill  6){}; & \node[skillTextComment]{2}; \\
 				\node[skillText]{Python};                    & \node[skillProgressArea, align=left](skill  7){}; & \node[skillTextComment]{2}; \\
 				\node[skillText]{Tcl};                       & \node[skillProgressArea, align=left](skill  8){}; & \node[skillTextComment]{7}; \\
+				\node[skillText]{Golang};                    & \node[skillProgressArea, align=left](skill  9){}; & \node[skillTextComment]{5}; \\
 			};
 			\draw (skill  1.west) node[skillProgressBar, minimum width=0.5*\cvSkillBarWidth] {};
 			\draw (skill  2.west) node[skillProgressBar, minimum width=0.7*\cvSkillBarWidth] {};
@@ -295,7 +298,8 @@
 			\draw (skill  6.west) node[skillProgressBar, minimum width=0.2*\cvSkillBarWidth] {};
 			\draw (skill  7.west) node[skillProgressBar, minimum width=0.2*\cvSkillBarWidth] {};
 			\draw (skill  8.west) node[skillProgressBar, minimum width=0.7*\cvSkillBarWidth] {};
-			\draw[decorate, decoration={brace, amplitude=5pt, raise=4ex}] (skill 8.west) (skill 1.east) -- (skill 8.east) node[midway, xshift=3.5em]{years};
+			\draw (skill  9.west) node[skillProgressBar, minimum width=0.5*\cvSkillBarWidth] {};
+			\draw[decorate, decoration={brace, amplitude=5pt, raise=4ex}] (skill 9.west) (skill 1.east) -- (skill 9.east) node[midway, xshift=3.5em]{years};
 		\end{tikzpicture}
 
 	\end{paracol}
