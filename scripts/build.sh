@@ -16,14 +16,12 @@ function show_help {
 * -h : shows this help
 * clean : removes the target directory
 * compile : compiles the document
-* prepare_pipeline: downloads dependencies for pipeline
-* compile_pipeline: build project in pipeline
+* prepare : downloads dependencies for pipeline
 
 E.g
 ./build.sh -h
 ./build.sh clean compile
 ./build.sh clean compile clean
-./build.sh prepare_pipeline compile_pipeline
 "
 }
 
@@ -35,27 +33,38 @@ function clean {
 	rm -rf $testOutputDirectory
 }
 
-function prepare_pipeline {
+function prepare {
   wget https://raw.githubusercontent.com/blang/latex-docker/master/latexdockercmd.sh
   chmod +x latexdockercmd.sh
 }
 
 function compile {
+	latexdockercmd=""
+
+	if [[ -n "${GITHUB_RUN_ID}" ]]; then
+		log "We are inside github pipeline with GITHUB_RUN_ID=$GITHUB_RUN_ID. Installing latexdockercmd."
+		latexdockercmd="./latexdockercmd.sh"
+
+		if [[ ! -f "${latexdockercmd}" ]]; then
+			log "File $latexdockercmd does not exist. Installing."
+			prepare
+		else
+			log "File $latexdockercmd already exists. Skip installing."
+		fi
+	fi
+
 	mkdir -p $testOutputDirectory
 
 	for f in $(find $sourceDirectory -type f -not -path "$testOutputDirectory/*" -not -path "$templateDirectory/*" -name "*.tex"); do
 		log "Compiling file $f."
 
-		pdflatex \
+		eval $latexdockercmd pdflatex \
 			-halt-on-error \
 			-output-directory $testOutputDirectory \
 			$f
 	done
 }
 
-function compile_pipeline {
-  ./latexdockercmd.sh ./scripts/build.sh clean compile
-}
 
 while getopts "h?vf:" opt; do
 	case "$opt" in
@@ -75,9 +84,6 @@ if [ "$#" -eq 0 ]; then
 	show_help
 	exit 0
 fi
-
-log "Environment variables"
-env
 
 log $@
 for stage in $@; do

@@ -16,8 +16,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: ./scripts/build.sh clean
-      - run: ./scripts/build.sh prepare_pipeline
-      - run: ./scripts/build.sh compile_pipeline
+      - run: ./scripts/build.sh prepare
+      - run: ./scripts/build.sh compile
 
       - uses: anchore/sbom-action/download-syft@v0.15.0
 
