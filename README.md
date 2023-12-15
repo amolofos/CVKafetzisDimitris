@@ -62,9 +62,9 @@ CI/CD integration from
 
 # License
 The content of this repository are restricted under the following licenses
-* [MIT License](MIT_License)
+* [MIT License](./LICENSE)
 The structure of this project, the layout of the cv document defined in tex
-and the integration with CI/CD tools are governed under the [MIT License](MIT_License).
+and the integration with CI/CD tools are governed under the [MIT License](./LICENSE).
 * Personal information and details that consist the context of the tex and pdf
 documents are under strict copyright and cannot be used without prior permission
 of the author.

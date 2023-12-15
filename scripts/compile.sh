@@ -1,15 +1,50 @@
 #!/bin/bash
 set -e
 
-# Reset in case getopts has been used previously in the shell.
-OPTIND=1
-
-sourceDirectory="."
 testOutputDirectory="$sourceDirectory/target"
 
-docker_image_name="cv-kafetzis-dimitris"
-docker_file="$sourceDirectory/docker/Dockerfile"
-docker_app_dir="${APP_DIR:-/opt/app}"
+sourceDirectory="${APP_DIR:-.}"
+testOutputDirectory="$sourceDirectory/target"
+templateDirectory="$sourceDirectory/LatexTemplateCVs"
+libDirectory="$sourceDirectory/lib"
+
+function log {
+	echo "`date +'%Y-%m-%d %H:%M:%S'` : $1"
+}
+
+export TEXINPUTS="$TEXINPUTS:$libDirectory"
+
+cd $sourceDirectory
+mkdir -p $testOutputDirectory
+
+for f in $(find $sourceDirectory -type f -not -path "$testOutputDirectory/*" -not -path "$templateDirectory/*" -name "*.tex"); do
+	log "Compiling file $f."
+
+	pdflatex \
+		-halt-on-error \
+		-output-directory $testOutputDirectory \
+		$f
+done
+
+log "Finished."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function show_help {
   echo "Parameters
@@ -49,10 +84,12 @@ function compile {
 
 	docker rm -f $docker_image_name 2>&1 && \
 	docker run \
-		-v     "$testOutputDirectory:$docker_app_dir/$testOutputDirectory" \
+		-v     "$sourceDirectory:/opt/data" \
 		--name $docker_image_name \
+		-it \
 		$docker_image_name \
-		$docker_app_dir/scripts/compile.sh
+		/bin/bash
+
 }
 
 

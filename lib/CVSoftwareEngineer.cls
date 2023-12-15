@@ -72,7 +72,9 @@
 \RequirePackage{etoolbox}
 
 % https://download.nus.edu.sg/mirror/ctan/fonts/fontawesome/doc/fontawesome.pdf
-\RequirePackage{fontawesome}
+% \RequirePackage{fontawesome}
+% https://ctan.org/pkg/fontawesome5
+\RequirePackage{fontawesome5}
 
 % Provides the justify command.
 \RequirePackage{ragged2e}
@@ -84,6 +86,9 @@
 
 % https://download.nus.edu.sg/mirror/ctan/info/symbols/comprehensive/symbols-a4.pdf
 \usepackage{enumitem}
+
+% https://tex.stackexchange.com/questions/167948/package-rerunfilecheck-warning-file-out-has-changed
+\usepackage{bookmark}
 
 
 % -----------------------------------------------------------------------------
