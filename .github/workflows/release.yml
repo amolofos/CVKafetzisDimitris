@@ -28,9 +28,20 @@ jobs:
           # This is important, otherwise it won't checkout the full tree (i.e. no previous tags).
           fetch-depth: 0
 
+      - run: ./scripts/build.sh clean
+      - run: ./scripts/build.sh prepare
+      - run: ./scripts/build.sh compile
+
       - uses: anchore/sbom-action/download-syft@v0.15.0
 
       - run: curl -sL https://git.io/autotag-install | sudo sh -s -- -b /usr/bin
 
+      # Login to ghcr.
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       # Increment version and tag.
-      - run: autotag --scheme=conventional
+      - run: autotag -v --scheme=conventional -n
