@@ -16,11 +16,14 @@ function show_help {
 * -h : shows this help
 * clean : removes the target directory
 * compile : compiles the document
+* prepare_pipeline: downloads dependencies for pipeline
+* compile_pipeline: build project in pipeline
 
 E.g
 ./build.sh -h
 ./build.sh clean compile
 ./build.sh clean compile clean
+./build.sh prepare_pipeline compile_pipeline
 "
 }
 
@@ -30,6 +33,11 @@ function log {
 
 function clean {
 	rm -rf $testOutputDirectory
+}
+
+function prepare_pipeline {
+  wget https://raw.githubusercontent.com/blang/latex-docker/master/latexdockercmd.sh
+  chmod +x latexdockercmd.sh
 }
 
 function compile {
@@ -43,6 +51,10 @@ function compile {
 			-output-directory $testOutputDirectory \
 			$f
 	done
+}
+
+function compile_pipeline {
+  ./latexdockercmd.sh ./scripts/build.sh clean compile
 }
 
 while getopts "h?vf:" opt; do
@@ -69,3 +81,5 @@ for stage in $@; do
 	log "Processing stage = $stage."
 	eval $stage
 done
+
+log "Finished."
