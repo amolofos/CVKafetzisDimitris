@@ -25,13 +25,17 @@ jobs:
 
       - uses: actions/checkout@v4
 
-      - run: ./scripts/build.sh clean
-      - run: ./scripts/build.sh prepare
-      - run: ./scripts/build.sh compile
+      - name: Clean
+        run: ./scripts/build.sh clean
+      - name: Prepare
+        run: ./scripts/build.sh prepare
+      - name: Compile
+        run: ./scripts/build.sh compile
 
       - uses: anchore/sbom-action/download-syft@v0.15.1
 
-      - run: curl -sL https://git.io/autotag-install | sudo sh -s -- -b /usr/bin
+      - name: Install autotag
+        run: curl -sL https://git.io/autotag-install | sudo sh -s -- -b /usr/bin
 
       # Login to ghcr.
       - uses: docker/login-action@v3
@@ -40,8 +44,9 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Increment version and tag.
-      - run: |
+      - name: Increment version and tag
+        id: tag
+        run: |
           # https://github.com/pantheon-systems/autotag#troubleshooting
           git fetch --tags --unshallow --prune
 
@@ -52,12 +57,16 @@ jobs:
 
           autotag -v --scheme=conventional
 
+          git push --tags origin main
+
+          echo "version=$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
+
       - uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           draft: false
           prerelease: false
-          automatic_release_tag:
+          automatic_release_tag: "${{ steps.tag.outputs.version }}"
           files: |
             LICENSE
             target/*.pdf
