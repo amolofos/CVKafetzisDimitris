@@ -68,13 +68,11 @@
 						] (contact) {
 							\node[languageText]{English};  & \node[languageProgressArea, align=left](language 1){}; & \node[languageTextComment]{}; \\
 							\node[languageText]{Greek};    & \node[languageProgressArea, align=left](language 2){}; & \node[languageTextComment]{Mother language}; \\
-							\node[languageText]{Mandarin}; & \node[languageProgressArea, align=left](language 3){}; & \node[languageTextComment]{Just started}; \\
 							% Added so we add some ysep bottom space to the outer, surounding personalDetailsBox node.
 							\node[languageText]{};         & \node                                              {}; & \node[languageTextComment]{}; \\
 						};
 						\draw (language 1.west) node[languageProgressBar, minimum width=5/5*\cvLanguageBarWidth]   {};
 						\draw (language 2.west) node[languageProgressBar, minimum width=5/5*\cvLanguageBarWidth]   {};
-						\draw (language 3.west) node[languageProgressBar, minimum width=0.1/5*\cvLanguageBarWidth] {};
 					\end{tikzpicture}
 				\end{minipage}
 			};
@@ -83,7 +81,7 @@
 		\begin{varwidth}{\cvSideWidthText}
 			\centerline{}
 			My experience spans across 10 YoE designing and building heavily transactional, distributed,
-			relational database backed systems. The last 2 years I have made a shift on the SRE problem domain.
+			relational database backed systems. The last 3 years I have made a shift on the SRE problem domain.
 		\end{varwidth}
 
 		\section{Education}
@@ -94,12 +92,13 @@
 
 		\section{Daily work activities}
 		\begin{tikzpicture}
-			\pie[polar, explode=0.1, radius=1.2, rotate=0, color = {cvPie!10, cvPie!20, cvPie!30, cvPie!40, cvPie!50}]{
-				15/Reviews,
-				25/Production support,
-				25/Development,
+			\pie[polar, explode=0.1, radius=1.2, rotate=0, color = {cvPie!10, cvPie!20, cvPie!15, cvPie!25, cvPie!20, cvPie!10}]{
+				10/Reviews,
+				20/Production support,
+				20/Development,
+				20/IaC,
 				20/System design,
-				15/Mentoring
+				10/Mentoring
 			}
 		\end{tikzpicture}
 
@@ -107,66 +106,38 @@
 		\switchcolumn
 
 		\section{Work experience}
-		\begin{tikzpicture}][every node/.style={inner sep=0pt, outer sep=0pt}]
-
-			% item 5
-			\node[
-				eventDotText]
-				(item 5 header)
-				{\phantom{Evening}};
-			\node[
-				eventDotText]
-				(item 5)
-				{\cvExperience
-					{Site Reliabily Engineer (SRE)}
-					{\href{https://www.bytedance.com/en}{Bytedance}}
-					{Singapore}
-					{Sept 2021 - Oct 2022}
-					{
-						\\ Joined the newly formed SRE team supported the Global E-commerce function of TikTok
-						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-							\item[\textasteriskcentered] Implemented a Kubernetes sidecar measuring the availability SLI of more than 200 HTTP services
-							\item[\textasteriskcentered] Pushed for adoption of error budget burn rate alerts
-							\item[\textasteriskcentered] Designed and implemented the MVP of an incident record tool reducing the manual bookkeeping activities and establishing oncall knowledge base
-						\end{enumerate}
-					}
-				};
-			\node[
-				left=\cvTimeDotSepMain of item 5 header,
-				timeDot]
-				(start)
-				{};
+		\begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
 
 			% item 4
 			\node[
-				below=\cvSectionSep of item 5.south west,
 				eventDotText]
 				(item 4 header)
 				{\phantom{Evening}};
 			\node[
-				below=\cvSectionSep of item 5.south west,
 				eventDotText]
 				(item 4)
 				{\cvExperience
-					{Principal Integration Engineer \textbar SRE}
-					{\href{https://www.openbet.com/}{OpenBet}}
+					{SRE / Platform Engineer}
+					{\href{https://vegasolutions.co}{VegaSolutions} / \href{https://tokkalabs.com}{TokkaLabs}}
 					{Singapore}
-					{2020-08 - 2021-09 (1yr 1mo)}
+					{Nov 2022 - Present}
 					{
+						\\ Joined as the first dedicated SRE/Platform engineer
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-							\item[\textasteriskcentered] Defined the initial process for an SRE rota across two teams located in multiple locations
-							\item[\textasteriskcentered] Configured prometheus and grafana infrastructure reducing the manual daily SRE monitoring activities
+							\item[\textasteriskcentered] Designed and implemented a new cloud architecture (AWS to AWS) reducing
+								latency from ~1s to below 500ms while supporting multiple regions (provisioning a full service new region
+								in less than 2 days).
+							\item[\textasteriskcentered] Created template integrations for instrumenting nodejs and python services
+								against Prometheus, Grafana and Jaeger allowing engineers to investigate issues in a matter of minutes.
+							\item[\textasteriskcentered] Refactored helm templates and value files easing maintenance and empowering
+								engineers to introduce new services from a couple of days to a few minutes.
 						\end{enumerate}
 					}
 				};
 			\node[
 				left=\cvTimeDotSepMain of item 4 header,
 				timeDot]
-				{};
-			\node[
-				right=\cvTimeDotSepSecondary of item 4 header,
-				invisibleTimeDot]
-				(startInner)
+				(start)
 				{};
 
 			% item 3
@@ -180,24 +151,23 @@
 				eventDotText]
 				(item 3)
 				{\cvExperience
-					{Principal Software Engineer}
-					{\href{https://www.openbet.com/}{OpenBet}}
+					{Site Reliabily Engineer (SRE)}
+					{\href{https://www.bytedance.com/en}{Bytedance}}
 					{Singapore}
-					{2018-09 - 2020-07 (1yr 11mos)}
+					{Sept 2021 - Oct 2022 (1yr 1mo)}
 					{
+						\\ Joined the newly formed SRE team supported the Global E-commerce function of TikTok
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-							\item[\textasteriskcentered] Hardened the funding flow ensuring eWallet integrity
-							\item[\textasteriskcentered] Enchanced the performance of slow database queries
-							\item[\textasteriskcentered] Investigated high profile production issues and present
-								them to C level stakeholders
-							\item[\textasteriskcentered] Migrated 80 million lottery bets to renewed data model
+							\item[\textasteriskcentered] Implemented a Kubernetes sidecar measuring the availability SLI of more than 200 HTTP services
+							\item[\textasteriskcentered] Pushed for adoption of error budget burn rate alerts
+							\item[\textasteriskcentered] Designed and implemented the MVP of an incident record tool reducing the manual bookkeeping activities and establishing oncall knowledge base
 						\end{enumerate}
 					}
 				};
-			\node[
-				left=\cvTimeDotSepMain of item 3 header,
-				timeDot]
-				{};
+				\node[
+					left=\cvTimeDotSepMain of item 3 header,
+					timeDot]
+					{};
 
 			% item 2
 			\node[
@@ -210,27 +180,21 @@
 				eventDotText]
 				(item 2)
 				{\cvExperience
-					{Senior Software Engineer}
+					{Principal Integration Engineer \textbar SRE}
 					{\href{https://www.openbet.com/}{OpenBet}}
 					{Singapore}
-					{Oct 2015 - Aug 2018 (2yrs 11mos)}
+					{Aug 2020 - Sep 2021 (1yr 1mo)}
 					{
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-							\item[\textasteriskcentered] Owned the data migration of 100 million rows of
-								transaction history completed in under 3 hours
-							\item[\textasteriskcentered] Designed distributed reportingqueries for Informix
-								database for the Finance and Trading departments
-							\item[\textasteriskcentered] Influenced the release process from code to
-								production increasing the delivery capacity of the team
-							\item[\textasteriskcentered] Refactored the ansible deployment scripts
-								reducing to zero the release introduced incidents
+							\item[\textasteriskcentered] Defined the initial process for an SRE rota across two teams located in multiple locations
+							\item[\textasteriskcentered] Configured prometheus and grafana infrastructure reducing the manual daily SRE monitoring activities
 						\end{enumerate}
 					}
 				};
-			\node[
-				left=\cvTimeDotSepMain of item 2 header,
-				timeDot]
-				{};
+				\node[
+					left=\cvTimeDotSepMain of item 2 header,
+					timeDot]
+					{};
 
 			% item 1
 			\node[
@@ -242,38 +206,43 @@
 				below=\cvSectionSep of item 2.south west,
 				eventDotText]
 				(item 1)
-				{\cvExperience{Software Engineer}
+				{\cvExperience
+					{Principal Software Engineer}
 					{\href{https://www.openbet.com/}{OpenBet}}
-					{Athens, Greece}
-					{Nov 2012 - Sept 2015 (2 yrs 11mos)}
+					{Athens / Singapore}
+					{Nov 2012 - Jul 2020 (7yrs 9mos)}
 					{
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-							\item[\textasteriskcentered] Wrote and executed the extraction of
-								one billion rows during uptime with no impact to operations
-							\item[\textasteriskcentered] Removed the need for PCI compliance by
-								integrating with tokenized credit card providers
+							\item[\textasteriskcentered] Hardened the funding flow ensuring eWallet integrity
+							\item[\textasteriskcentered] Migrated 80 million lottery bets to renewed data model
+							\item[\textasteriskcentered] Owned the data migration of 100 million rows of
+								transaction history completed in under 3 hours
+							\item[\textasteriskcentered] Influenced the release process from code to
+								production increasing the delivery capacity of the team
+							\item[\textasteriskcentered] Refactored the ansible deployment scripts
+								reducing to zero the release introduced incidents
 						\end{enumerate}
 					}
 				};
-			\node[
-				left=\cvTimeDotSepMain of item 1 header,
-				timeDot]
-				{};
-			\node[
-				below=0cm of item 1.south east,
-				invisibleTimeDot]
-				(endInner)
-				{};
-			\node[
-				left=\cvTimeDotSepMain of item 1 header,
-				invisibleTimeDot]
-				(end)
-				{};
+				\node[
+					left=\cvTimeDotSepMain of item 1 header,
+					timeDot]
+					{};
+				\node[
+					below=0cm of item 1.south east,
+					invisibleTimeDot]
+					(endInner)
+					{};
+				\node[
+					left=\cvTimeDotSepMain of item 1 header,
+					invisibleTimeDot]
+					(end)
+					{};
 
 			%\draw [eventGroupedLine] (endInner) -- (startInner) node [eventGroupedSideText]{Same department, same product, multiple acquisitions.};
 
 			% Use `shorten <=-10mm` to adjust the position of the arrow.
-			\draw[very thick, {Triangle[length = 7pt)]}-{}, shorten <=-2mm] (start.north) to (end.south);
+			\draw[very thick, {Triangle[length = 7pt]}-{}, shorten <=-2mm] (start.north) to (end.south);
 		\end{tikzpicture}
 	\end{paracol}
 
@@ -284,11 +253,11 @@
 			APIs and modules on distributed Linux based systems.
 		\item[\textasteriskcentered] \textit{Rdbms, informix \& postgres}: Crafted queries and reviewed the performance of data
 			intensive rdbms systems
+		\item[\textasteriskcentered] \textit{Golang}: Built HTTP and RPC APIs and created tools internal to SRE processes
 		\item[\textasteriskcentered] \textit{Ansible \& Python}: Established the correct usage of Ansible scripts reducing the complexity
 			of the deployment process and developed Ansible modules increasing the effectiveness of our scripts
-		\item[\textasteriskcentered] \textit{Java \& Springboot}: Enhanced APIs based on Springboot Java 8
-			applications for 2 years
-		\item[\textasteriskcentered] \textit{Golang}: Built HTTP and RPC APIs and created tools internal to SRE processes
+		\item[\textasteriskcentered] \textit{Terraform \& Cloud (AWS)}: Build multi region and multi account AWS infrastructure
+		\item[\textasteriskcentered] \textit{Kubernetes}: Build multiple (4 regions / uat and prod) K3s clusters managed by Rancher
 	\end{enumerate}
 
 \end{document}
