@@ -29,7 +29,7 @@ jobs:
       - run: ./scripts/build.sh prepare
       - run: ./scripts/build.sh compile
 
-      - uses: anchore/sbom-action/download-syft@v0.15.0
+      - uses: anchore/sbom-action/download-syft@v0.15.1
 
       - run: curl -sL https://git.io/autotag-install | sudo sh -s -- -b /usr/bin
 
