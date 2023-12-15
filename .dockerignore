@@ -1,0 +1,25 @@
+# Common
+**/README.md
+**/CHANGELOG.md
+**/docker-compose.yml
+**/Dockerfile
+
+**/node_modules/
+**/.git
+**/README.md
+**/LICENSE
+**/.vscode
+**/npm-debug.log
+**/coverage
+**/.env
+**/.editorconfig
+**/.aws
+**/dist
+
+# git
+.git
+.gitattributes
+.gitignore
+
+# Custom
+texput.log
