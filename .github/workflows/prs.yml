@@ -17,7 +17,7 @@ jobs:
 
       - run: ./scripts/build.sh clean
       - run: ./scripts/build.sh prepare_pipeline
-      - run: ./scripts/build.sh build_pipeline
+      - run: ./scripts/build.sh compile_pipeline
 
       - uses: anchore/sbom-action/download-syft@v0.15.0
 

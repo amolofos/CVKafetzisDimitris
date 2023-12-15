@@ -76,6 +76,9 @@ if [ "$#" -eq 0 ]; then
 	exit 0
 fi
 
+log "Environment variables"
+env
+
 log $@
 for stage in $@; do
 	log "Processing stage = $stage."
