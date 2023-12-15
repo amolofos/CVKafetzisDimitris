@@ -61,6 +61,14 @@ jobs:
 
           echo "version=$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
 
+      - name: Rename artifacts
+        run: |
+          mkdir -p artifacts
+          mv target/DimitrisKafetzis-cv-en-anonymised.pdf     "artifacts/DimitrisKafetzis-cv-en-anonymised.${{ steps.tag.outputs.version }}.pdf"
+          mv target/DimitrisKafetzis-cv-en-colorsAndIcons.pdf "artifacts/DimitrisKafetzis-cv-en-colorsAndIcons.${{ steps.tag.outputs.version }}.pdf"
+          mv target/DimitrisKafetzis-cv-en-oneColumn.pdf      "artifacts/DimitrisKafetzis-cv-en-oneColumn.${{ steps.tag.outputs.version }}.pdf"
+          mv target/DimitrisKafetzis-cv-en-twoColumn.pdf      "artifacts/DimitrisKafetzis-cv-en-twoColumn.${{ steps.tag.outputs.version }}.pdf"
+
       - uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
@@ -69,4 +77,4 @@ jobs:
           automatic_release_tag: "${{ steps.tag.outputs.version }}"
           files: |
             LICENSE
-            target/*.pdf
+            artifacts/*.pdf
