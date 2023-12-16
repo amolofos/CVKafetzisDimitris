@@ -4,12 +4,9 @@ set -e
 # Reset in case getopts has been used previously in the shell.
 OPTIND=1
 
-sourceDirectory="."
-testOutputDirectory="$sourceDirectory/target"
-
-docker_image_name="cv-kafetzis-dimitris"
-docker_file="$sourceDirectory/docker/Dockerfile"
-docker_app_dir="${APP_DIR:-/opt/app}"
+function log {
+	echo "`date +'%Y-%m-%d %H:%M:%S'` : $1"
+}
 
 function show_help {
   echo "Parameters
@@ -25,9 +22,13 @@ E.g
 "
 }
 
-function log {
-	echo "`date +'%Y-%m-%d %H:%M:%S'` : $1"
-}
+rootDirectory="."
+testOutputDirectory="$rootDirectory/target"
+
+docker_image_name="cv-kafetzis-dimitris"
+docker_file="$rootDirectory/docker/Dockerfile"
+docker_app_dir="${APP_DIR:-/opt/app}"
+
 
 function clean {
 	rm -rf $testOutputDirectory
@@ -47,7 +48,7 @@ function prepare {
 function compile {
 	prepare
 
-	docker rm -f $docker_image_name 2>&1 && \
+	docker rm -f $docker_image_name 2>&1
 	docker run \
 		-v     "$testOutputDirectory:$docker_app_dir/$testOutputDirectory" \
 		--name $docker_image_name \
@@ -69,15 +70,17 @@ done
 shift $((OPTIND-1))
 [ "${1:-}" = "--" ] && shift
 
+log "Got $# parameters, these here: $*."
+
 if [ "$#" -eq 0 ]; then
 	show_help
 	exit 0
 fi
 
-log $@
-for stage in $@; do
+for stage in "$@"; do
 	log "Processing stage = $stage."
 	eval $stage
+	log "Finished processing stage = $stage."
 done
 
 log "Finished."

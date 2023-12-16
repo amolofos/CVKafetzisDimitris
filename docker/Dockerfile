@@ -7,8 +7,7 @@ WORKDIR $APP_DIR
 
 COPY ./docker/docker-entrypoint.sh /opt/docker-entrypoint.sh
 
-COPY lib/ $APP_DIR/lib
+COPY src/ $APP_DIR/src
 COPY scripts/ $APP_DIR/scripts
-COPY *.tex $APP_DIR/
 
 ENTRYPOINT [ "/opt/docker-entrypoint.sh" ]

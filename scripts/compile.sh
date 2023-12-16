@@ -1,23 +1,27 @@
 #!/bin/bash
 set -e
 
-testOutputDirectory="$sourceDirectory/target"
-
-sourceDirectory="${APP_DIR:-.}"
-testOutputDirectory="$sourceDirectory/target"
-templateDirectory="$sourceDirectory/LatexTemplateCVs"
-libDirectory="$sourceDirectory/lib"
-
 function log {
 	echo "`date +'%Y-%m-%d %H:%M:%S'` : $1"
 }
 
+rootDirectory="${APP_DIR:-.}"
+
+sourceDirectory="$rootDirectory/src"
+testOutputDirectory="$rootDirectory/target"
+templateDirectory="$rootDirectory/LatexTemplateCVs"
+libDirectory="$sourceDirectory/lib"
+
 export TEXINPUTS="$TEXINPUTS:$libDirectory"
 
-cd $sourceDirectory
+files=$(find $sourceDirectory -type f -name "*.tex")
+
+log "Compiling files $files."
+
+cd $rootDirectory
 mkdir -p $testOutputDirectory
 
-for f in $(find $sourceDirectory -type f -not -path "$testOutputDirectory/*" -not -path "$templateDirectory/*" -name "*.tex"); do
+for f in $files; do
 	log "Compiling file $f."
 
 	pdflatex \
