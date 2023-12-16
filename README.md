@@ -1,16 +1,31 @@
-# Table of Contents
+# CV based on (Xe/Lua)LaTeX.
+
+## Table of Contents
+
 1. [Overview](#Ooerview)
 2. [Change Log](#change-log)
 3. [Inspirations](#inspirations)
 4. [Build](#build)
 5. [License](#license)
 
-# Overview
+## Overview
 This is the curriculum vitae of Kafetzis Dimitris, written in latex.
 
-[![Build Status](https://travis-ci.com/amolofos/CVKafetzisDimitris.svg?token=WmFepTN2ADiZVawdTQqx&branch=master)](https://travis-ci.com/amolofos/CVKafetzisDimitris)
+![Build Status - main](https://github.com/github/amolofos/CVKafetzisDimitris/actions/workflows/release.yml/badge.svg)
 
-# Change Log
+## Build
+
+* Linux
+    ```
+    $ ./scripts/build.sh clean compile
+    ```
+
+## Change Log
+
+* 2023-12-16
+    * Added SRE/Platform engineer role in VegaSolutions
+    * Move to Github Actions
+    * Introduced a local docker image
 * 2020-10-17
     * Add SRE role
 * 2020-07-13
@@ -31,7 +46,8 @@ This is the curriculum vitae of Kafetzis Dimitris, written in latex.
     * There were two separate repositories - one for the English
 version and one for the Greek.
 
-# Inspirations
+## Inspirations
+
 Inspirations for this layout have been drawn one by the following templates
 * [LimeCV](https://github.com/opieters/limecv), [Article part 1](https://olivierpieters.be/blog/2017/09/12/designing-a-cv-in-latex-part-1), [Article part 2](https://olivierpieters.be/blog/2017/10/02/designing-a-cv-in-latex-part-2), [Article part 3](https://olivierpieters.be/blog/2017/10/29/designing-a-cv-in-latex-part-3)
 * [AltaCV Template](https://www.overleaf.com/latex/templates/altacv-template/trgqjpwnmtgv)
@@ -50,18 +66,10 @@ CI/CD integration from
 * [A short postmortem on moving to Docker for LaTeX continuous integration](https://ljvmiranda921.github.io/notebook/2018/04/23/postmortem-shift-to-docker/) & [github cv](https://github.com/ljvmiranda921/cv) by Lj Miranda (ljvmiranda921)
 * [Using Travis CI with LaTeX documents](https://shankarkulumani.com/2018/10/travis-and-latex.html) by Shankar Kulumani
 
-# Build
-* Linux
-    ```
-    $ ./scripts/build.sh clean compile
-    ```
-* Windows
-    ```
-    $ .\build.ps1 clean compile
-    ```
+## License
 
-# License
 The content of this repository are restricted under the following licenses
+
 * [MIT License](./LICENSE)
 The structure of this project, the layout of the cv document defined in tex
 and the integration with CI/CD tools are governed under the [MIT License](./LICENSE).
