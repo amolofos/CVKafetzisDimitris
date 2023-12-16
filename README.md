@@ -11,7 +11,7 @@
 ## Overview
 This is the curriculum vitae of Kafetzis Dimitris, written in latex.
 
-![Build Status - main](https://github.com/github/amolofos/CVKafetzisDimitris/actions/workflows/release.yml/badge.svg)
+![Build Status - main](https://github.com/amolofos/CVKafetzisDimitris/actions/workflows/release.yml/badge.svg)
 
 ## Build
 
