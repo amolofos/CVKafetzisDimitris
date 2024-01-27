@@ -80,7 +80,7 @@
 
 		\begin{varwidth}{\cvSideWidthText}
 			\centerline{}
-			My experience spans across 10 YoE designing and building heavily transactional, distributed,
+			My experience spans across 11 YoE designing and building heavily transactional, distributed,
 			relational database backed systems. The last 3 years I have made a shift on the SRE problem domain.
 		\end{varwidth}
 
@@ -125,12 +125,15 @@
 						\\ Joined as the first dedicated SRE/Platform engineer
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
 							\item[\textasteriskcentered] Designed and implemented a new cloud architecture (AWS to AWS) reducing
-								latency from ~1s to below 500ms while supporting multiple regions (provisioning a full service new region
+								latency from +1s to below 500ms while supporting multiple regions (provisioning a new full-service region
 								in less than 2 days).
 							\item[\textasteriskcentered] Created template integrations for instrumenting nodejs and python services
 								against Prometheus, Grafana and Jaeger allowing engineers to investigate issues in a matter of minutes.
 							\item[\textasteriskcentered] Refactored helm templates and value files easing maintenance and empowering
 								engineers to introduce new services from a couple of days to a few minutes.
+							\item[\textasteriskcentered] Pushed for a cloud native architecture by provisioning databases inside k8s
+								and advocating for k8s only deployments. Succeeded in deploying small mysql, postgres/timescale and redis
+								clusters in k8s.
 						\end{enumerate}
 					}
 				};
@@ -152,11 +155,10 @@
 				(item 3)
 				{\cvExperience
 					{Site Reliabily Engineer (SRE)}
-					{\href{https://www.bytedance.com/en}{Bytedance}}
+					{\href{https://www.bytedance.com/en}{Bytedance} - Global E-commerce TikTok}
 					{Singapore}
 					{Sept 2021 - Oct 2022 (1yr 1mo)}
 					{
-						\\ Joined the newly formed SRE team supported the Global E-commerce function of TikTok
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
 							\item[\textasteriskcentered] Implemented a Kubernetes sidecar measuring the availability SLI of more than 200 HTTP services
 							\item[\textasteriskcentered] Pushed for adoption of error budget burn rate alerts
@@ -207,9 +209,9 @@
 				eventDotText]
 				(item 1)
 				{\cvExperience
-					{Principal Software Engineer}
+					{Software Engineer, \scriptsize{Junior to Senior}}
 					{\href{https://www.openbet.com/}{OpenBet}}
-					{Athens / Singapore}
+					{Athens, Greece / Singapore}
 					{Nov 2012 - Jul 2020 (7yrs 9mos)}
 					{
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
@@ -248,7 +250,8 @@
 
 	\section{Skills \& Technology stack}
 	%[labelwidth=!, labelindent=0pt, leftmargin=*]
-	\begin{enumerate}[leftmargin=*, rightmargin=10pt]
+	\begin{enumerate}[labelwidth=!, labelindent=0pt, leftmargin=*, rightmargin=15pt]
+		\itemsep0em
 		\item[\textasteriskcentered] \textit{Distributed systems}: Implemented features that spanned across multiple services,
 			APIs and modules on distributed Linux based systems.
 		\item[\textasteriskcentered] \textit{Rdbms, informix \& postgres}: Crafted queries and reviewed the performance of data
