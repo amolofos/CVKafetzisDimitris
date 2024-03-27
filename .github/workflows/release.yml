@@ -32,7 +32,7 @@ jobs:
       - name: Compile
         run: ./scripts/build.sh compile
 
-      - uses: anchore/sbom-action/download-syft@v0.15.9
+      - uses: anchore/sbom-action/download-syft@v0.15.10
 
       - name: Install autotag
         run: curl -sL https://git.io/autotag-install | sudo sh -s -- -b /usr/bin
