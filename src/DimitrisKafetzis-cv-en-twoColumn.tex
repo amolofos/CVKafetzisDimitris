@@ -80,8 +80,8 @@
 
 		\begin{varwidth}{\cvSideWidthText}
 			\centerline{}
-			My experience spans across 11 YoE designing and building heavily transactional, distributed,
-			relational database backed systems. The last 3 years I have made a shift on the SRE problem domain.
+			My experience spans across 12 YoE designing and building heavily transactional, distributed,
+			relational database backed systems. The last 4 years I have made a shift on the SRE problem domain.
 		\end{varwidth}
 
 		\section{Education}
@@ -117,23 +117,14 @@
 				eventDotText]
 				(item 4)
 				{\cvExperience
-					{SRE \textbar\space Platform Engineer}
-					{\href{https://vegasolutions.co}{VegaSolutions} / \href{https://tokkalabs.com}{TokkaLabs} / \href{https://native.org/}{Native} / \href{https://www.rangeprotocol.com/}{RangeProtocol}}
+					{Senior Site Reliability Engineer (SRE) \textbar\space Platform Reliability Engineer}
+					{\href{https://adyen.com}{Adyen}}
 					{Singapore}
-					{Nov 2022 - Present}
+					{Sept 2024 - Present}
 					{
-						\\ Joined as the first dedicated SRE and Platform engineer
+						\\ Joined as a member of the global SRE team.
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-							\item[\textasteriskcentered] Designed and implemented a new cloud architecture (AWS to AWS) reducing
-								latency from +1s to below 500ms while supporting multiple regions (provisioning a new full-service region
-								in less than 2 days).
-							\item[\textasteriskcentered] Created template integrations for instrumenting nodejs and python services
-								against Prometheus, Grafana and Jaeger allowing engineers to investigate issues in a matter of minutes.
-							\item[\textasteriskcentered] Refactored helm templates and value files easing maintenance and empowering
-								engineers to introduce new services from a couple of days to a few minutes.
-							\item[\textasteriskcentered] Pushed for a cloud native architecture by provisioning databases inside k8s
-								and advocating for k8s only deployments. Succeeded in deploying small mysql, postgres/timescale and redis
-								clusters in k8s.
+							\item[\textasteriskcentered] Eased the onboarding by structuring and writing an intro-to-platform course.
 						\end{enumerate}
 					}
 				};
@@ -154,22 +145,30 @@
 				eventDotText]
 				(item 3)
 				{\cvExperience
-					{Site Reliability Engineer (SRE)}
-					{\href{https://www.bytedance.com/en}{Bytedance}, Global E-commerce TikTok}
+					{SRE \textbar\space Platform Engineer}
+					{\href{https://vegasolutions.co}{VegaSolutions} / \href{https://tokkalabs.com}{TokkaLabs} / \href{https://native.org/}{Native} / \href{https://www.rangeprotocol.com/}{RangeProtocol}}
 					{Singapore}
-					{Sept 2021 - Oct 2022 (1yr 1mo)}
+					{Nov 2022 - Aug 2024}
 					{
+						\\ Joined as the first dedicated SRE and Platform engineer.
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-							\item[\textasteriskcentered] Implemented a Kubernetes sidecar measuring the availability SLI of more than 200 HTTP services
-							\item[\textasteriskcentered] Pushed for adoption of error budget burn rate alerts
-							\item[\textasteriskcentered] Designed and implemented the MVP of an incident record tool reducing the manual bookkeeping activities and establishing oncall knowledge base
+							\item[\textasteriskcentered] Designed and implemented a new cloud architecture (AWS to AWS) reducing
+								latency from +1s to below 500ms while supporting multiple regions (provisioning a new full-service region
+								in less than 2 days).
+							\item[\textasteriskcentered] Created template integrations for instrumenting nodejs and python services
+								against Prometheus, Grafana and Jaeger allowing engineers to investigate issues in a matter of minutes.
+							\item[\textasteriskcentered] Refactored helm templates and value files easing maintenance and empowering
+								engineers to introduce new services from a couple of days to a few minutes.
+							\item[\textasteriskcentered] Pushed for a cloud native architecture by provisioning databases inside k8s
+								and advocating for k8s only deployments. Succeeded in deploying small mysql, postgres/timescale and redis
+								clusters in k8s.
 						\end{enumerate}
 					}
 				};
-				\node[
-					left=\cvTimeDotSepMain of item 3 header,
-					timeDot]
-					{};
+			\node[
+				left=\cvTimeDotSepMain of item 3 header,
+				timeDot]
+				{};
 
 			% item 2
 			\node[
@@ -182,14 +181,15 @@
 				eventDotText]
 				(item 2)
 				{\cvExperience
-					{Principal Integration Engineer \textbar\space SRE}
-					{\href{https://www.openbet.com/}{OpenBet}}
+					{Site Reliability Engineer (SRE)}
+					{\href{https://www.bytedance.com/en}{Bytedance}, Global E-commerce TikTok}
 					{Singapore}
-					{Aug 2020 - Sep 2021 (1yr 1mo)}
+					{Sept 2021 - Oct 2022 (1yr 1mo)}
 					{
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-							\item[\textasteriskcentered] Defined the initial process for an SRE rota across two teams located in multiple locations
-							\item[\textasteriskcentered] Configured prometheus and grafana infrastructure reducing the manual daily SRE monitoring activities
+							\item[\textasteriskcentered] Implemented a Kubernetes sidecar measuring the availability SLI of more than 200 HTTP services.
+							\item[\textasteriskcentered] Pushed for adoption of error budget burn rate alerts.
+							\item[\textasteriskcentered] Designed and implemented the MVP of an incident record tool reducing the manual bookkeeping activities and establishing oncall knowledge base.
 						\end{enumerate}
 					}
 				};
@@ -209,20 +209,19 @@
 				eventDotText]
 				(item 1)
 				{\cvExperience
-					{Software Engineer, \scriptsize{Junior to Senior}}
+					{Principal Software Engineer \textbar\space SRE}
 					{\href{https://www.openbet.com/}{OpenBet}}
 					{Athens, Greece / Singapore}
-					{Nov 2012 - Jul 2020 (7yrs 9mos)}
+					{Nov 2012 - Sep 2021 (8yrs 10mos)}
 					{
 						\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-							\item[\textasteriskcentered] Hardened the funding flow ensuring eWallet integrity
-							\item[\textasteriskcentered] Migrated 80 million lottery bets to renewed data model
-							\item[\textasteriskcentered] Owned the data migration of 100 million rows of
-								transaction history completed in under 3 hours
-							\item[\textasteriskcentered] Influenced the release process from code to
-								production increasing the delivery capacity of the team
-							\item[\textasteriskcentered] Refactored the ansible deployment scripts
-								reducing to zero the release introduced incidents
+							\item[\textasteriskcentered] Refactored the Ansible deployment scripts
+							reducing to zero the release related incidents.
+							\item[\textasteriskcentered] Enhanced the performance of database queries reducing
+								the number of incidents to zero (0).
+							\item[\textasteriskcentered] Led a team of 3 engineers hardening the
+								funding flow droping incindents from 1 per week to 1 per year.
+							\item[\textasteriskcentered] Defined the initial process for an SRE rota across two teams located in multiple locations.
 						\end{enumerate}
 					}
 				};
