@@ -62,10 +62,10 @@
 % https://sites.clas.ufl.edu/gradmath/files/tikz.pdf
 \RequirePackage{tikz}
 
-% https://download.nus.edu.sg/mirror/ctan/graphics/pgf/contrib/pgfplots/doc/pgfplots.pdf
-\RequirePackage{pgfplots}
-
 % https://download.nus.edu.sg/mirror/ctan/graphics/pgf/contrib/pgf-pie/pgf-pie-manual.pdf
+% Note: pgf-pie only needs tikz, not pgfplots. None of the CVs plot an axis,
+% so pgfplots was removed to silence its "backwards compatibility mode"
+% warning on every build.
 \RequirePackage{pgf-pie}
 
 % https://download.nus.edu.sg/mirror/ctan/macros/latex/contrib/etoolbox/etoolbox.pdf
@@ -315,6 +315,11 @@
 	margin=\margin,
 	noheadfoot
 }
+
+% noheadfoot leaves \footskip at 0pt, which fancyhdr warns is too small for
+% an empty footer. No template defines a footer, so this only silences the
+% warning; it does not move or resize the text area set above.
+\setlength{\footskip}{5pt}
 
 % Specify the amount of space between the columns
 \setlength\columnsep{0.05\textwidth}

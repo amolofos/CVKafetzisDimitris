@@ -1,9 +1,19 @@
 \documentclass{CVSoftwareEngineer}
 
+\hypersetup{
+	pdftitle={Dimitris Andreas Kafetzis - CV},
+	pdfauthor={Dimitris Andreas Kafetzis},
+	pdfsubject={Site Reliability Engineer - Platform Engineering},
+	pdfkeywords={Site Reliability Engineering, SRE, Platform Engineering, Kubernetes, Nomad, etcd, Golang, Python, Bash, Postgres, Informix, Redis, AWS, Terraform, Ansible, Helm, Prometheus, Grafana, Loki, Jaeger, OpenTelemetry, CI/CD, SLO, SLI, Linux},
+	pdflang={en}
+}
+
 \titlespacing{\section}{0pt}{-10pt}{4pt}
 
-\cvname{Kafetzis, Dimitris Andreas}
-\cvjobtitle{Principal Software Engineer}
+\renewcommand{\cvExperience}[5]{{#1 \hfill \scriptsize#4}\\ {\scriptsize {\small\textit{#2}} -- #3.} #5}
+
+\cvname{Dimitris Andreas, Kafetzis}
+\cvjobtitle{Site Reliability Engineer \textperiodcentered\space Platform Engineering}
 \cvaddress{Singapore}
 \cvlinkedin{\href{https://www.linkedin.com/in/kafetzisd}{linkedin.com/in/kafetzisd}}
 \cvgithub{\href{https://github.com/amolofos}{github.com/amolofos}}
@@ -13,95 +23,102 @@
 
 	\section{\textbf{\cvname}}
 	\begin{center}
-		\href{mailto:\cvmail}{\cvmail} \space \textbar \space \cvlinkedin \space \textbar \space \cvgithub \\
-		Greek working under \textit{Employment Pass} in \cvaddress
+		\href{mailto:\cvmail}{\cvmail}~\textbar~\cvlinkedin~\textbar~\cvgithub \\
+		\textbf{\cvjobtitle}~\textbar~\textit{Employment Pass} holder in \cvaddress
 	\end{center}
-	My experience spans across 14 YoE designing and building heavily transactional, distributed,
-	relational database backed systems. The last 6 years I have made a shift on the SRE problem domain and Platform Engineering.
+	Software engineer with 14 years building high-throughput, transactional, distributed
+	systems; the last 6 focused on reliability, observability and platform engineering.
 
 	\section{Work experience}
 	\begin{enumerate}[labelwidth=!, labelindent=0pt, leftmargin=*, rightmargin=15pt]
 
 		\item[] \cvExperience
-			{Senior Site Reliability Engineer (SRE) \textbar\space Platform Reliability Engineer}
+			{\textbf{Senior SRE \textbar\space Platform Reliability Engineer}}
 			{\href{https://adyen.com}{Adyen}}
 			{Singapore}
-			{Sept 2024 - Present}
+			{Sep 2024 - Present}
 			{
 				\\ Joined the global SRE and the Cloud Services teams.
 				\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-					\item[\textasteriskcentered] Took ownership of legacy systems, supporting $\sim$1.5k servers automating their provisioning.
-					\item[\textasteriskcentered] Completed the fine tuning of Linux kernel tcp settings across multiple teams reducing the recovery time from 2 hours to 2.2 minutes.
+					\item[\textasteriskcentered] Owned legacy systems, $\sim$1.5k servers, saving 1 engineer-week per month through automations.
+					\item[\textasteriskcentered] Tuned Linux kernel TCP settings, cutting MTTR (app recovery time) from 2 hours to 2.2 minutes.
 					\item[\textasteriskcentered] Built a load testing MVP aiming to reduce preparation for critical events from months to 2 weeks.
 				\end{enumerate}
 			}
 
 		\item[] \cvExperience
-			{Site Reliability Engineer (SRE) \textbar\space Platform Engineer}
+			{\textbf{Senior SRE \textbar\space Platform Engineer}}
 			{\href{https://vegasolutions.co}{VegaSolutions} / \href{https://tokkalabs.com}{TokkaLabs} / \href{https://native.org/}{Native} / \href{https://www.rangeprotocol.com/}{RangeProtocol}}
 			{Singapore}
-			{Nov 2022 - Aug 2024}
+			{Nov 2022 - Aug 2024 (1yr 10mos)}
 			{
 				\\ Joined as the first dedicated SRE and Platform engineer.
 				\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-					\item[\textasteriskcentered] Designed and implemented a cloud architecture reducing latency from +1s to below 500ms.
-					\item[\textasteriskcentered] Managed 9 K8s clusters across 3 regions provisioning a new full region in less than 2 days.
-					\item[\textasteriskcentered] Created template integrations for instrumenting nodejs and python services
-						against Prometheus, Grafana and Jaeger allowing engineers to investigate issues in a matter of minutes.
-					\item[\textasteriskcentered] Refactored helm templates and value files easing maintenance and empowering
-						engineers to introduce new services from a couple of days to a few minutes.
-						\item[\textasteriskcentered] Pushed for a cloud native architecture by provisioning databases inside k8s
-						and advocating for k8s only deployments. Succeeded in deploying small mysql, postgres/timescale and redis
-						clusters in k8s.
+					\item[\textasteriskcentered] Designed and implemented our cloud architecture reducing latency from +1s to below 500ms.
+					\item[\textasteriskcentered] Managed 9 Kubernetes clusters across 3 regions provisioning a new region in 2 days end to end.
+					\item[\textasteriskcentered] Instrumented Node.js and Python services to reduce investigation time down to minutes.
+					\item[\textasteriskcentered] Refactored Helm charts reducing introduction of new services from a couple of days to a few minutes.
+					\item[\textasteriskcentered] Pushed for pure cloud native architecture. Succeeded in deploying small database clusters in k8s.
 				\end{enumerate}
 			}
 
 		\item[] \cvExperience
-			{Site Reliability Engineer (SRE)}
+			{\textbf{Site Reliability Engineer (SRE)}}
 			{\href{https://www.bytedance.com/en}{Bytedance}, Global E-commerce TikTok}
 			{Singapore}
-			{Sept 2021 - Oct 2022 (1yr 1mo)}
+			{Sep 2021 - Oct 2022 (1yr 1mo)}
 			{
 				\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
 					\item[\textasteriskcentered] Implemented a Kubernetes sidecar measuring the availability SLI of more than 200 HTTP services.
-					\item[\textasteriskcentered] Designed and implemented the MVP version of an incident record tool aiming to reduce the manual bookkeeping activities during oncall cases and build a knowledge base based on them.
+					\item[\textasteriskcentered] Designed and built the MVP of an incident recording platform, released in alpha/beta for evaluation.
 				\end{enumerate}
 			}
 
 		\item[] \cvExperience
-			{Principal Integration Engineer \textbar\space SRE}
+			{\textbf{Principal Integration Engineer \textbar\space SRE}}
 			{\href{https://www.openbet.com/}{OpenBet}}
 			{Singapore}
-			{Aug 2020 - Sept 2021 (1yr 1mo)}
-			{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+			{Aug 2020 - Sep 2021 (1yr 1mo)}
+			{
+				\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
 					\item[\textasteriskcentered] Defined the initial process for an SRE rota across two teams located in multiple locations.
-					\item[\textasteriskcentered] Configured prometheus and grafana infrastructure reducing the manual daily SRE monitoring activities.
+					\item[\textasteriskcentered] Configured Prometheus and Grafana infrastructure, reducing manual daily SRE monitoring work.
 				\end{enumerate}
 			}
 
 		\item[] \cvExperience
-			{Principal Software Engineer}
+			{\textbf{Senior / Principal Software Engineer}}
 			{\href{https://www.openbet.com/}{OpenBet}}
 			{Athens, Greece / Singapore}
 			{Nov 2012 - Jul 2020 (7yrs 9mos)}
-			{\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
-					\item[\textasteriskcentered] Refactored the Ansible deployment scripts
-					reducing to zero the release related incidents.
-					\item[\textasteriskcentered] Influenced the release process from code to
-					production increasing the delivery capacity of the team.
-					\item[\textasteriskcentered] Enhanced the performance of slow database queries reducing
-						the number of production incidents due to human design error to zero (0).
-						\item[\textasteriskcentered] Owned the data migration of 100 million rows of
+			{
+				\begin{enumerate}[labelwidth=!, labelindent=0pt, nosep, leftmargin=*]
+					\item[\textasteriskcentered] Refactored the release and deployment process, eliminating the root cause of release-related incidents.
+					\item[\textasteriskcentered] Optimised slow database queries, permanently eliminating the related production incidents.
+					\item[\textasteriskcentered] Owned the data migration of 100 million rows of
 						transaction history completed in under 3 hours.
-					\item[\textasteriskcentered] Migrated 80 million lottery bets to a more robust data model.
+					\item[\textasteriskcentered] Migrated 80 million lottery bets with zero incidents within 4 hours total downtime.
 				\end{enumerate}
 			}
 	\end{enumerate}
 
+	\section{Skills \& Technology stack}
+	%[labelwidth=!, labelindent=0pt, leftmargin=*]
+	\begin{enumerate}[labelwidth=!, labelindent=0pt, leftmargin=*, rightmargin=15pt]
+		\itemsep0em
+		\item[\textasteriskcentered] \textit{Systems}: Linux, Kubernetes (k8s), Nomad, etcd
+		\item[\textasteriskcentered] \textit{Languages \& Databases}: Golang, Python, Bash, Postgres, Informix, Redis
+		\item[\textasteriskcentered] \textit{Cloud \& IaC}: AWS, on-premises, Ansible, Terraform, Helm
+		\item[\textasteriskcentered] \textit{Observability \& Practices}: Prometheus, Grafana, Loki, Jaeger, OpenTelemetry, CI/CD, SLO/SLI
+	\end{enumerate}
+
+	% Small compensating negative space: the larger (\small) company names
+	% above add a few points of height per entry, which on this page's very
+	% tight budget was just enough to push Education onto a second page.
+	\vspace{-10pt}
 	\section{Education}
 	\begin{enumerate}[labelwidth=!, labelindent=0pt, leftmargin=*, rightmargin=15pt]
-		\item[] Not completed tertiary education \\
-			DO, Electrical Engineering and Computer Science, University of Patras, Greece \hfill {\scriptsize Sep 2003 - Jul 2009}
+		\item[] Electrical Engineering and Computer Science (not completed), University of Patras, Greece \hfill {\scriptsize Sep 2003 - Jul 2009}
 	\end{enumerate}
 
 \end{document}
